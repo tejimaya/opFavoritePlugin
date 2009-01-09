@@ -1,0 +1,6 @@
+HomeWidget:
+  favorite_list_box:
+    type: "sideMenu"
+    name: "favoriteListBox"
+    sort_order: 40
+

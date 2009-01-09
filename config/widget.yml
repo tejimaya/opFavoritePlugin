@@ -1,0 +1,13 @@
+favoriteListBox:
+  component: [favorite, favoriteListBox]
+  config:
+    col:
+      Name:        "col"
+      ValueType:   "int"
+      IsRequired:  true
+      Default:     3
+    row:
+      Name:        "row"
+      ValueType:   "int"
+      IsRequired:  true
+      Default:     3
