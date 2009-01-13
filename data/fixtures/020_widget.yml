@@ -3,4 +3,7 @@ HomeWidget:
     type: "sideMenu"
     name: "favoriteListBox"
     sort_order: 40
-
+  favorite_news:
+    type: "contents"
+    name: "favoriteNews"
+    sort_order: 103

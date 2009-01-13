@@ -11,3 +11,5 @@ favoriteListBox:
       ValueType:   "int"
       IsRequired:  true
       Default:     3
+favoriteNews:
+  component: [favorite, favoriteNews]

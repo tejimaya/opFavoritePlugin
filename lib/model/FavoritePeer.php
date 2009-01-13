@@ -41,7 +41,7 @@ class FavoritePeer extends BaseFavoritePeer
   public static function retrieveMembers($favorites)
   {
     $members = array();
-    foreach($favorites as $favorite)
+    foreach ($favorites as $favorite)
     {
       $members[] = MemberPeer::retrieveByPk($favorite->getTargetMemberId());
     }
@@ -71,5 +71,74 @@ class FavoritePeer extends BaseFavoritePeer
     $favorite->delete();
   }
 
+  public static function retrieveDiaryList($member_id, $size = 10)
+  {
+    $c = new Criteria();
+    $c->add(FavoritePeer::MEMBER_ID, $member_id);
+    $c->addJoin(FavoritePeer::TARGET_MEMBER_ID, MemberPeer::ID);
+    $c->addJoin(FavoritePeer::TARGET_MEMBER_ID, DiaryPeer::MEMBER_ID);
+    $c->addSelectColumn(MemberPeer::NAME);
+    $c->addSelectColumn(DiaryPeer::TITLE);
+    $c->addSelectColumn(DiaryPeer::CREATED_AT);
+    $c->addSelectColumn(DiaryPeer::ID);
+    $c->addSelectColumn(DiaryPeer::HAS_IMAGES);
+    $c->addDescendingOrderbyColumn(DiaryPeer::ID);
+    $c->setLimit($size);
 
+    if (!FavoritePeer::doCount($c))
+    {
+      return null;
+    }
+
+    $stmt = FavoritePeer::doSelectStmt($c);
+
+    $list = array();
+    for ($i = 0; $row = $stmt->fetch(); $i++)
+    {
+      $list[$i] = array();
+      $list[$i]['id'] = $row['ID'];
+      $list[$i]['name'] = $row['NAME'];
+      $list[$i]['title'] = $row['TITLE'];
+      $list[$i]['date'] = $row['CREATED_AT'];
+      $list[$i]['image'] = $row['HAS_IMAGES'];
+    }
+
+    return $list;
+  }
+
+  public static function retrieveDiaryPager($member_id, $page = 1, $size = 10)
+  {
+    $favorites = self::retrieveFavorites($member_id, $size);
+    $c = new Criteria();
+    foreach ($favorites as $favorite)
+    {
+      $c->add(DiaryPeer::MEMBER_ID, $favorite->getTargetMemberId());
+    }
+    $c->addDescendingOrderbyColumn(DiaryPeer::ID);
+
+    $pager = new sfPropelPager('Diary', $size);
+    $pager->setCriteria($c);
+    $pager->setPage($page);
+    $pager->init();
+
+    return $pager;
+  }
+
+  public static function retrieveDiaryListFromPager($pager)
+  {
+    $list = array();
+    $i = 0;
+    foreach($pager->getResults() as $diary)
+    {
+      $list[$i] = array();
+      $list[$i]['id'] = $diary->getId();
+      $list[$i]['name'] = MemberPeer::retrieveByPk($diary->getMemberId())->getName();
+      $list[$i]['title'] = $diary->getTitle();
+      $list[$i]['date'] = $diary->getCreatedAt();
+      $list[$i]['image'] = $diary->getHasImages();
+      $i++;
+    }
+
+    return $list;
+  }
 }

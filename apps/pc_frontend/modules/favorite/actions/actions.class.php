@@ -24,8 +24,10 @@ class favoriteActions extends sfActions
   public function idCheck()
   {
     // id check
-    if(!$this->hasRequestParameter('id')) $this->forward404Unless( NULL, 'Undefined id.');
+    if (!$this->hasRequestParameter('id')) $this->forward404Unless( NULL, 'Undefined id.');
     $this->id = $this->getRequestParameter('id', $this->getUser()->getMemberId());
+
+    $this->forward404Unless( $this->getUser()->getMemberId() != $this->id, 'Can\'t add your id' );
 
     if ($this->id != $this->getUser()->getMemberId())
     {
@@ -40,12 +42,27 @@ class favoriteActions extends sfActions
   */
   public function executeList($request)
   {
-    $this->pager = FavoritePeer::retrievePager($this->getUser()->getMemberId());
+    $this->pager = FavoritePeer::retrievePager($this->getUser()->getMemberId(), $request->getParameter('id'));
     $this->members = FavoritePeer::retrieveMembers($this->pager->getResults());
     if (!$this->pager->getNbResults())
     {
       return sfView::ERROR;
     }
+  }
+
+/**
+  * Executes diary blog list action
+  *
+  * @param sfRequest $request A request object
+  */
+  public function executeDiarybloglist($request)
+  {
+    $this->diaryPager = FavoritePeer::retrieveDiaryPager($this->getUser()->getMemberId(), $request->getParameter('id'));
+    if (!$this->diaryPager->getNbResults())
+    {
+      return sfView::ERROR;
+    }
+    $this->diaryList = FavoritePeer::retrieveDiaryListFromPager($this->diaryPager);
   }
 
  /**

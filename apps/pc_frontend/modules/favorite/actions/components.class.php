@@ -20,4 +20,8 @@ class favoriteComponents extends sfComponents
     $this->favorites = FavoritePeer::retrieveFavorites($this->getUser()->getMemberId(), $this->row * $this->col, $c);
     $this->members = FavoritePeer::retrieveMembers($this->favorites);
   }
+  public function executeFavoriteNews()
+  {
+    $this->diary_list = FavoritePeer::retrieveDiaryList($this->getUser()->getMemberId());
+  }
 }
