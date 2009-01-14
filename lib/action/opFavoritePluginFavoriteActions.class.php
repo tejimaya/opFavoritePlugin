@@ -43,11 +43,11 @@ class opFavoritePluginFavoriteActions extends sfActions
   public function executeList($request)
   {
     $this->pager = FavoritePeer::retrievePager($this->getUser()->getMemberId(), $request->getParameter('page'));
-    $this->members = FavoritePeer::retrieveMembers($this->pager->getResults());
     if (!$this->pager->getNbResults())
     {
       return sfView::ERROR;
     }
+    $this->members = FavoritePeer::retrieveMembers($this->pager->getResults());
   }
 
 /**
@@ -57,7 +57,8 @@ class opFavoritePluginFavoriteActions extends sfActions
   */
   public function executeDiarybloglist($request)
   {
-    $this->diaryPager = FavoritePeer::retrieveDiaryPager($this->getUser()->getMemberId(), $request->getParameter('id'));
+    $page = $request->hasParameter('page') ? $request->getParameter('page') : 1;
+    $this->diaryPager = FavoritePeer::retrieveDiaryPager($this->getUser()->getMemberId(), $page);
     if (!$this->diaryPager->getNbResults())
     {
       return sfView::ERROR;

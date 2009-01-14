@@ -20,7 +20,6 @@ class FavoritePeer extends BaseFavoritePeer
     $pager->setCriteria($c);
     $pager->setPage($page);
     $pager->init();
- 
     return $pager;
   }
 
@@ -108,11 +107,11 @@ class FavoritePeer extends BaseFavoritePeer
 
   public static function retrieveDiaryPager($member_id, $page = 1, $size = 10)
   {
-    $favorites = self::retrieveFavorites($member_id, $size);
+    $favorites = self::retrieveFavorites($member_id);
     $c = new Criteria();
     foreach ($favorites as $favorite)
     {
-      $c->add(DiaryPeer::MEMBER_ID, $favorite->getTargetMemberId());
+      $c->addOr(DiaryPeer::MEMBER_ID, $favorite->getTargetMemberId());
     }
     $c->addDescendingOrderbyColumn(DiaryPeer::ID);
 
@@ -120,7 +119,6 @@ class FavoritePeer extends BaseFavoritePeer
     $pager->setCriteria($c);
     $pager->setPage($page);
     $pager->init();
-
     return $pager;
   }
 
