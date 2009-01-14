@@ -1,0 +1,13 @@
+homeSuccess:
+  customize:
+    favoriteLink:
+      template: [favorite, favoriteLink]
+      parts: [invite]
+      target: [after]
+profileSuccess:
+  customize:
+    addFavoriteLink:
+      template: [favorite, addFavoriteLink]
+      parts: [friendList]
+      target: [before]
+

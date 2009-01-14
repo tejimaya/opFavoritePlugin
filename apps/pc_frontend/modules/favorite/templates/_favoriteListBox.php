@@ -1,9 +1,9 @@
 <?php
 $option = array(
-  'title' => __('お気に入りリスト'),
+  'title' => __('Favorite list'),
   'list' => $members,
   'link_to' => 'member/profile?id=',
-  'moreInfo' => array(sprintf('%s(%d)', __('全てを見る'), $cnt) => 'favorite/list'),
+  'moreInfo' => array(sprintf('%s(%d)', __('Show all'), $cnt) => 'favorite/list'),
   'type' => 'full',
   'row' => $row,
   'col' => $col,

@@ -127,8 +127,7 @@ class FavoritePeer extends BaseFavoritePeer
   public static function retrieveDiaryListFromPager($pager)
   {
     $list = array();
-    $i = 0;
-    foreach($pager->getResults() as $diary)
+    foreach ($pager->getResults() as $i => $diary)
     {
       $list[$i] = array();
       $list[$i]['id'] = $diary->getId();
@@ -136,7 +135,6 @@ class FavoritePeer extends BaseFavoritePeer
       $list[$i]['title'] = $diary->getTitle();
       $list[$i]['date'] = $diary->getCreatedAt();
       $list[$i]['image'] = $diary->getHasImages();
-      $i++;
     }
 
     return $list;

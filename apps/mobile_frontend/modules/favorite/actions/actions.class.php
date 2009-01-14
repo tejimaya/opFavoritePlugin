@@ -16,15 +16,17 @@
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
-class favoriteActions extends sfActions
+class favoriteActions extends opFavoritePluginFavoriteActions
 {
  /**
-  * Executes index action
+  * Executes add action
   *
   * @param sfRequest $request A request object
   */
-  public function executeIndex($request)
+  public function executeAdd($request)
   {
-    $this->forward('default', 'module');
+    $this->idCheck();
+    FavoritePeer::add($this->getUser()->getMemberId(), $this->id);
+    $this->redirect('favorite/list');
   }
 }

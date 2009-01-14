@@ -1,3 +1,3 @@
 <?php
 
-include_box( 'notFavorite', __('お気に入り'), __('まだお気に入り登録がありません。'));
+include_box( 'notFavorite', __('Favorite'), __('There is not registration of the favorite yet.'));
