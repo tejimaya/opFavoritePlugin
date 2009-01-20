@@ -14,8 +14,8 @@ class favoriteComponents extends sfComponents
   {
     $c = new Criteria();
     $c->addAscendingOrderByColumn(Propel::getDB()->random(time()));
-    $this->row = $this->widget->getConfig('row');
-    $this->col = $this->widget->getConfig('col');
+    $this->row = $this->gadget->getConfig('row');
+    $this->col = $this->gadget->getConfig('col');
     $this->cnt = FavoritePeer::countByMemberId($this->getUser()->getMemberId());
     $this->favorites = FavoritePeer::retrieveFavorites($this->getUser()->getMemberId(), $this->row * $this->col, $c);
     $this->members = FavoritePeer::retrieveMembers($this->favorites);
