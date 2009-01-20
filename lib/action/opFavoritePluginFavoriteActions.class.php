@@ -31,7 +31,7 @@ class opFavoritePluginFavoriteActions extends sfActions
 
     if ($this->id != $this->getUser()->getMemberId())
     {
-      sfConfig::set('sf_navi_type', 'friend');
+      sfConfig::set('sf_nav_type', 'friend');
     }
   }
 
