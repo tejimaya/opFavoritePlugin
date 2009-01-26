@@ -50,22 +50,6 @@ class opFavoritePluginFavoriteActions extends sfActions
     $this->members = FavoritePeer::retrieveMembers($this->pager->getResults());
   }
 
-/**
-  * Executes diary blog list action
-  *
-  * @param sfRequest $request A request object
-  */
-  public function executeDiarybloglist($request)
-  {
-    $page = $request->hasParameter('page') ? $request->getParameter('page') : 1;
-    $this->diaryPager = FavoritePeer::retrieveDiaryPager($this->getUser()->getMemberId(), $page);
-    if (!$this->diaryPager->getNbResults())
-    {
-      return sfView::ERROR;
-    }
-    $this->diaryList = FavoritePeer::retrieveDiaryListFromPager($this->diaryPager);
-  }
-
  /**
   * Executes delete action
   *

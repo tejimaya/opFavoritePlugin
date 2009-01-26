@@ -22,6 +22,7 @@ class favoriteComponents extends sfComponents
   }
   public function executeFavoriteNews()
   {
-    $this->diary_list = FavoritePeer::retrieveDiaryList($this->getUser()->getMemberId());
+    $this->diaryList = FavoritePeer::retrieveDiaryList($this->getUser()->getMemberId());
+    $this->blogList = FavoritePeer::getBlogListOfFavorite($this->getUser()->getMemberId(), 10, true);
   }
 }

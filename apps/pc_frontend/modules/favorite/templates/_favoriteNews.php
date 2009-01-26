@@ -1,25 +1,30 @@
 <?php
 
-$list = array();
-
-if ($diary_list)
+if (count($diaryList))
 {
-  $diary = array(
-      'caption' => sprintf(__('The favorite%snewest diary'), '<br />'),
-      'link_to_detail' => 'diary/%d',
-      'content' => array(),
-      'moreInfo' => 'favorite/diarybloglist'
-    );
-
-  foreach ($diary_list as $res)
-  {
-      $diary['content'][] = $res;
-  }
-
-  $list[] = $diary;
+  include_parts(
+    'diaryListBox',
+    'favoriteHomeDiary',
+    array(
+      'title' => __('The favorite newest diary'),
+      'list' => $diaryList,
+      'showName' => true,
+      'moreInfo' => 'favorite/diary',
+      'link_to' => 'diary/%d'
+    )
+  );
 }
 
-if (!empty($list))
+if (count($blogList))
 {
-  include_news('favoriteNews', __('The favorite newest information'), $list);
+  include_parts(
+    'blogListBox',
+    'favoriteHomeBlog',
+    array(
+      'title' => __('The favorite newest blog'),
+      'list' => $blogList,
+      'showName' => true,
+      'moreInfo' => 'favorite/blog'
+    )
+  );
 }

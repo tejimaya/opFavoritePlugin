@@ -37,4 +37,33 @@ class favoriteActions extends opFavoritePluginFavoriteActions
     }
     $this->member = MemberPeer::retrieveByPk($this->id);
   }
+
+ /**
+  * Executes diary action
+  *
+  * @param sfRequest $request A request object
+  */
+  public function executeDiary($request)
+  {
+    $this->diaryPager = FavoritePeer::retrieveDiaryPager($this->getUser()->getMemberId(), $request->getParameter('page', 1));
+    if (!$this->diaryPager->getNbResults())
+    {
+      return sfView::ERROR;
+    }
+    $this->diaryList = FavoritePeer::retrieveDiaryListFromPager($this->diaryPager);
+  }
+
+ /**
+  * Executes blog action
+  *
+  * @param sfRequest $request A request object
+  */
+  public function executeBlog($request)
+  {
+    $this->blogList = FavoritePeer::getBlogListOfFavorite($this->getUser()->getMemberId());
+    if (!count($this->blogList))
+    {
+      return sfView::ALERT;
+    }
+  }
 }

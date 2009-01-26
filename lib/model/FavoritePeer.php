@@ -92,14 +92,15 @@ class FavoritePeer extends BaseFavoritePeer
     $stmt = FavoritePeer::doSelectStmt($c);
 
     $list = array();
-    for ($i = 0; $row = $stmt->fetch(); $i++)
+    while ($row = $stmt->fetch())
     {
-      $list[$i] = array();
-      $list[$i]['id'] = $row['ID'];
-      $list[$i]['name'] = $row['NAME'];
-      $list[$i]['title'] = $row['TITLE'];
-      $list[$i]['date'] = $row['CREATED_AT'];
-      $list[$i]['image'] = $row['HAS_IMAGES'];
+      $list[] = self::setDiary(
+        strtotime($row['CREATED_AT']),
+        $row['TITLE'],
+        $row['ID'],
+        $row['NAME'],
+        $row['HAS_IMAGES']
+      );
     }
 
     return $list;
@@ -125,16 +126,48 @@ class FavoritePeer extends BaseFavoritePeer
   public static function retrieveDiaryListFromPager($pager)
   {
     $list = array();
-    foreach ($pager->getResults() as $i => $diary)
+    foreach ($pager->getResults() as $diary)
     {
-      $list[$i] = array();
-      $list[$i]['id'] = $diary->getId();
-      $list[$i]['name'] = MemberPeer::retrieveByPk($diary->getMemberId())->getName();
-      $list[$i]['title'] = $diary->getTitle();
-      $list[$i]['date'] = $diary->getCreatedAt();
-      $list[$i]['image'] = $diary->getHasImages();
+      $list[] = self::setDiary(
+        $diary->getCreatedAt(),
+        $diary->getTitle(),
+        $diary->getId(),
+        MemberPeer::retrieveByPk($diary->getMemberId())->getName(),
+        $diary->getHasImages()
+      );
     }
 
+    return $list;
+  }
+
+  public static function setDiary($date, $title, $id, $name, $image)
+  {
+    return array(
+      'date' => $date,
+      'title' => $title . ' ('. DiaryCommentPeer::getMaxNumber($id) .') ',
+      'id' => $id,
+      'name' => $name,
+      'image' => $image & 1
+    );
+  }
+
+  public static function getBlogListOfFavorite($member_id, $size=20, $limitTitle = false)
+  {
+    $c = new Criteria();
+    $c->add(FavoritePeer::MEMBER_ID, $member_id);
+    $c->addSelectColumn(FavoritePeer::TARGET_MEMBER_ID);
+    $stmt = FavoritePeer::doSelectStmt($c);
+    $list = array();
+    while($id = $stmt->fetchColumn(0))
+    {
+      BlogPeer::getBlogListByMemberId($id, $list);
+    }
+    $list = BlogPeer::sortBlogList($list, $size);
+    if ($limitTitle)
+    {
+      BlogPeer::limitBlogTitle($list);
+    }
+    
     return $list;
   }
 }
