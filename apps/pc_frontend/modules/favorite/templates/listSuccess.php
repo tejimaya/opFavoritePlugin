@@ -17,10 +17,12 @@
 <td><?php echo $member->getName() ?></td>
 </tr>
 
+<?php if ($member->getProfile('self_intro')): ?>
 <tr>
 <th><?php echo $member->getProfile('self_intro')->getCaption() ?></th>
 <td><?php echo nl2br($member->getProfile('self_intro')) ?></td>
 </tr>
+<?php endif ?>
 
 <tr>
 <th><?php echo __('The last login') ?></th>
