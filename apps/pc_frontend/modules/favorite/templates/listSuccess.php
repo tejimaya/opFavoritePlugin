@@ -1,18 +1,19 @@
-<?php use_helper('Date'); ?>
+<?php use_helper('Date') ?>
 <div class="dparts searchResultList"><div class="parts">
 <div class="partsHeading"><h3><?php echo __('Favorite') ?></h3></div>
 
-<div class="pagerRelative"><p class="number"><?php echo pager_navigation($pager, 'friend/list?page=%d'); ?></p></div>
+<div class="pagerRelative"><p class="number"><?php echo pager_navigation($pager, 'favorite/list?page=%d'); ?></p></div>
 
 <div class="block">
 
 <?php foreach ($members as $member): ?>
-<div class="ditem"><div class="item"><table><tbody><tr>
+<div class="ditem"><div class="item">
+<table><tbody>
 
-<td rowspan="4" class="photo">
+<tr>
+<td rowspan="3" class="photo">
 <?php echo link_to(image_tag_sf_image($member->getImageFilename(), array('size' => '76x76')), 'member/profile?id=' . $member->getId()); ?><br />
 </td>
-
 <th><?php echo __('Nickname') ?></th>
 <td><?php echo $member->getName() ?></td>
 </tr>
@@ -24,23 +25,21 @@
 </tr>
 <?php endif ?>
 
-<tr>
+<tr class="operation">
 <th><?php echo __('The last login') ?></th>
-<td style="padding: 0">
-<span style="display: block; border-right: 1px solid #CCCCCC; float: left; width: 110px; padding: 5px">
-<?php echo distance_of_time_in_words($member->getLastLoginTime()) ?>
-</span>
-<span style="display: block; padding-top: 5px">
+<td>
+<span class="text"><?php echo distance_of_time_in_words($member->getLastLoginTime()) ?></span>
+<span class="moreInfo">
 <?php echo link_to(__('Show detail'), 'member/profile?id=' . $member->getId()) ?>
-<?php echo link_to(__('Delete'), 'favorite/delete?id=' . $member->getId()) ?>
+ <?php echo link_to(__('Delete'), 'favorite/delete?id=' . $member->getId()) ?>
 </span>
 </td>
 </tr>
 
-</tbody></table></div></div>
-<?php endforeach; ?>
-</div>
-
-<div class="pagerRelative"><p class="number"><?php echo pager_navigation($pager, 'friend/list?page=%d'); ?></p></div>
-
+</tbody></table>
 </div></div>
+
+<div class="pagerRelative"><p class="number"><?php echo pager_navigation($pager, 'favorite/list?page=%d'); ?></p></div>
+
+<?php endforeach; ?>
+</div></div></div>

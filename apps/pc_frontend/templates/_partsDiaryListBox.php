@@ -7,8 +7,6 @@
 
 <div class="block">
 
-<table>
-<tbody>
 <ul class="articleList">
 <?php foreach($options['list'] as $res): ?>
 <li>
@@ -32,9 +30,6 @@ echo link_to( $res['title'], sprintf($options['link_to'], $res['id']));
 <?php echo link_to(__('More info'), $options['moreInfo']) ?>
 </li></ul></div>
 <?php endif; ?>
-
-</tbody>
-</table>
 
 </div>
 
