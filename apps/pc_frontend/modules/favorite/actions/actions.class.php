@@ -45,12 +45,11 @@ class favoriteActions extends opFavoritePluginFavoriteActions
   */
   public function executeDiary($request)
   {
-    $this->diaryPager = FavoritePeer::retrieveDiaryPager($this->getUser()->getMemberId(), $request->getParameter('page', 1));
-    if (!$this->diaryPager->getNbResults())
+    $this->pager = FavoritePeer::retrieveDiaryPager($this->getUser()->getMemberId(), $request->getParameter('page', 1));
+    if (!$this->pager->getNbResults())
     {
       return sfView::ERROR;
     }
-    $this->diaryList = FavoritePeer::retrieveDiaryListFromPager($this->diaryPager);
   }
 
  /**
