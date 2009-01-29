@@ -38,8 +38,7 @@
 
 </tbody></table>
 </div></div>
+<?php endforeach; ?>
 
 <div class="pagerRelative"><p class="number"><?php echo pager_navigation($pager, 'favorite/list?page=%d'); ?></p></div>
-
-<?php endforeach; ?>
 </div></div></div>
