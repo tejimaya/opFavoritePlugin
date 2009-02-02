@@ -4,7 +4,7 @@ if (count($diaryList))
 {
   include_parts(
     'diaryListBox',
-    'favoriteHomeDiary',
+    'favoriteHomeDiary_'.$gadget->getId(),
     array(
       'title' => __('The favorite newest diary'),
       'list' => $diaryList,
@@ -19,7 +19,7 @@ if (count($blogList))
 {
   include_parts(
     'blogListBox',
-    'favoriteHomeBlog',
+    'favoriteHomeBlog_'.$gadget->getId(),
     array(
       'title' => __('The favorite newest blog'),
       'list' => $blogList,

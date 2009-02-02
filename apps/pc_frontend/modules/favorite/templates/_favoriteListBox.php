@@ -9,4 +9,4 @@ $options = array(
   'col' => $col,
 );
 
-op_include_parts('nineTable', 'favoriteList', $options);
+op_include_parts('nineTable', 'favoriteList_'.$gadget->getId(), $options);
