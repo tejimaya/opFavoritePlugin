@@ -38,7 +38,7 @@
 </form>
 </li>
 <li>
-<form method="get" action="">
+<form action="<?php echo url_for('member/' . $member->getId()) ?>">
 <input type="submit" value=<?php echo __('No') ?> class="input_submit"/>
 </form>
 </li>
