@@ -36,6 +36,10 @@ class favoriteActions extends opFavoritePluginFavoriteActions
       $this->redirect('member/profile?id=' . $this->id);
     }
     $this->member = MemberPeer::retrieveByPk($this->id);
+    if (FavoritePeer::alreadyRegistered($this->getUser()->getMemberId(), $this->id))
+    {
+      return sfView::ALERT;
+    }
   }
 
  /**

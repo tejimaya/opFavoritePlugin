@@ -26,3 +26,16 @@ NavigationI18n:
     caption: "お気に入り"
     culture: "ja_JP"
 
+  favorite_navigation_list_i18n_en:
+    id: favorite_navigation_list
+    caption: "Favorite"
+    culture: "en_US"
+  favorite_navigation_add_i18n_en:
+    id: favorite_navigation_add
+    caption: "Add to favorite"
+    culture: "en_US"
+  mobile_home_side_navigation_favorite_list_i18n_en:
+    id: mobile_home_side_navigation_favorite_list
+    caption: "Favorite"
+    culture: "en_US"
+

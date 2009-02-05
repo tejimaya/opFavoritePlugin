@@ -170,4 +170,13 @@ class FavoritePeer extends BaseFavoritePeer
     
     return $list;
   }
+
+  public static function alreadyRegistered($member_id, $target_member_id)
+  {
+    $c = new Criteria();
+    $c->add(FavoritePeer::MEMBER_ID, $member_id);
+    $c->add(FavoritePeer::TARGET_MEMBER_ID, $target_member_id);
+
+    return FavoritePeer::doCount($c) ? true : false;
+  }
 }

@@ -81,6 +81,16 @@
       <source>The blog is none</source>
       <target>Blogがありません</target>
       </trans-unit>
+
+      <trans-unit id="17">
+      <source>Add to favorite</source>
+      <target>お気に入りに追加</target>
+      </trans-unit>
+
+      <trans-unit id="18">
+      <source>%s is already registered to a favorite.</source>
+      <target>%sさんはすでにお気に入りに登録済みです。</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
