@@ -13,8 +13,7 @@
  *
  * @package    OpenPNE
  * @subpackage favorite
- * @author     Your name here
- * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
+ * @author     Masato Nagasawa
  */
 class opFavoritePluginFavoriteActions extends sfActions
 {
@@ -42,12 +41,13 @@ class opFavoritePluginFavoriteActions extends sfActions
   */
   public function executeList($request)
   {
-    $this->pager = FavoritePeer::retrievePager($this->getUser()->getMemberId(), $request->getParameter('page'));
+    $favoriteTable = Doctrine::getTable('Favorite');
+    $this->pager = $favoriteTable->retrievePager($this->getUser()->getMemberId(), $request->getParameter('page'));
     if (!$this->pager->getNbResults())
     {
       return sfView::ERROR;
     }
-    $this->members = FavoritePeer::retrieveMembers($this->pager->getResults());
+    $this->members = $favoriteTable->retrieveMembers($this->pager->getResults());
   }
 
  /**
@@ -57,7 +57,7 @@ class opFavoritePluginFavoriteActions extends sfActions
   */
   public function executeDelete($request)
   {
-    FavoritePeer::delete( $this->getUser()->getMemberId(), $request->getParameter('id'));
+    Doctrine::getTable('Favorite')->delete( $this->getUser()->getMemberId(), $request->getParameter('id'));
     $this->redirect('favorite/list');
   }
 }

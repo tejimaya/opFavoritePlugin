@@ -2,6 +2,6 @@ profileSuccess:
   customize:
     addFavoriteLink:
       template: [favorite, addFavoriteLink]
-      parts: [friendList]
-      target: [before]
+      parts: [menu]
+      target: [bottom]
 

@@ -1,8 +1,0 @@
-propel:
-  _attributes: { package: plugins.opFavoritePlugin.lib.model }
-
-  favorite:
-     id: ~
-     member_id:   { type: integer, foreignTable: member, foreignReference: id }
-     target_member_id: { type: integer, foreignTable: member, foreignReference: id }
-     created_at: ~

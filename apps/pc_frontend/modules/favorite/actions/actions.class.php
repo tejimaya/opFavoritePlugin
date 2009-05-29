@@ -13,8 +13,7 @@
  *
  * @package    OpenPNE
  * @subpackage favorite
- * @author     Your name here
- * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
+ * @author     Masato Nagasawa
  */
 class favoriteActions extends opFavoritePluginFavoriteActions
 {
@@ -26,17 +25,18 @@ class favoriteActions extends opFavoritePluginFavoriteActions
   public function executeAdd($request)
   {
     $this->idCheck();
+    $favoriteTable = Doctrine::getTable('Favorite');
     if ($request->isMethod('post'))
     {
       if ($request->hasParameter('add'))
       {
-        FavoritePeer::add($this->getUser()->getMemberId(), $this->id);
+        $favoriteTable->add($this->getUser()->getMemberId(), $this->id);
         $this->redirect('favorite/list');
       }
       $this->redirect('member/profile?id=' . $this->id);
     }
-    $this->member = MemberPeer::retrieveByPk($this->id);
-    if (FavoritePeer::alreadyRegistered($this->getUser()->getMemberId(), $this->id))
+    $this->member = Doctrine::getTable('Member')->find($this->id);
+    if ($favoriteTable->retrieveByMemberIdFromAndTo($this->getUser()->getMemberId(), $this->id))
     {
       return sfView::ALERT;
     }
@@ -49,7 +49,7 @@ class favoriteActions extends opFavoritePluginFavoriteActions
   */
   public function executeDiary($request)
   {
-    $this->pager = FavoritePeer::retrieveDiaryPager($this->getUser()->getMemberId(), $request->getParameter('page', 1));
+    $this->pager = Doctrine::getTable('Favorite')->retrieveDiaryPager($this->getUser()->getMemberId(), $request->getParameter('page', 1));
     if (!$this->pager->getNbResults())
     {
       return sfView::ERROR;
@@ -63,7 +63,7 @@ class favoriteActions extends opFavoritePluginFavoriteActions
   */
   public function executeBlog($request)
   {
-    $this->blogList = FavoritePeer::getBlogListOfFavorite($this->getUser()->getMemberId());
+    $this->blogList = Doctrine::getTable('Favorite')->getBlogListOfFavorite($this->getUser()->getMemberId());
     if (!count($this->blogList))
     {
       return sfView::ALERT;

@@ -26,7 +26,7 @@ class favoriteActions extends opFavoritePluginFavoriteActions
   public function executeAdd($request)
   {
     $this->idCheck();
-    FavoritePeer::add($this->getUser()->getMemberId(), $this->id);
+    Doctrine::getTable('Favorite')->add($this->getUser()->getMemberId(), $this->id);
     $this->redirect('favorite/list');
   }
 }

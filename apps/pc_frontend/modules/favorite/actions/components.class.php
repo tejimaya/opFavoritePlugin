@@ -12,17 +12,19 @@ class favoriteComponents extends sfComponents
 {
   public function executeFavoriteListBox()
   {
-    $c = new Criteria();
-    $c->addAscendingOrderByColumn(Propel::getDB()->random(time()));
     $this->row = $this->gadget->getConfig('row');
     $this->col = $this->gadget->getConfig('col');
-    $this->cnt = FavoritePeer::countByMemberId($this->getUser()->getMemberId());
-    $this->favorites = FavoritePeer::retrieveFavorites($this->getUser()->getMemberId(), $this->row * $this->col, $c);
-    $this->members = FavoritePeer::retrieveMembers($this->favorites);
+
+    $favoriteTable = Doctrine::getTable('Favorite');
+    $this->cnt = $favoriteTable->countByMemberId($this->getUser()->getMemberId());
+    $this->favorites = $favoriteTable->retrievesByMemberIdFrom($this->getUser()->getMemberId(), $this->row * $this->col);
+    $this->members = $favoriteTable->retrieveMembers($this->favorites);
   }
   public function executeFavoriteNews()
   {
-    $this->diaryList = FavoritePeer::retrieveDiaryList($this->getUser()->getMemberId());
-    $this->blogList = FavoritePeer::getBlogListOfFavorite($this->getUser()->getMemberId(), 10, true);
+    $favoriteTable = Doctrine::getTable('Favorite');
+
+    $this->diaryList = $favoriteTable->retrieveDiaryList($this->getUser()->getMemberId());
+    $this->blogList = $favoriteTable->getBlogListOfFavorite($this->getUser()->getMemberId(), 10, true);
   }
 }
