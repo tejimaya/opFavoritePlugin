@@ -17,14 +17,15 @@ if (count($diaryList))
 
 if (count($blogList))
 {
-  include_parts(
-    'blogListBox',
+  op_include_parts(
+    'BlogListBox',
     'favoriteHomeBlog_'.$gadget->getId(),
     array(
+      'class' => 'homeRecentList',
       'title' => __('The favorite newest blog'),
-      'list' => $blogList,
+      'blogRssCacheList' => $blogList,
       'showName' => true,
-      'moreInfo' => 'favorite/blog'
+      'moreInfo' => array(link_to(__('More info'), 'favorite/blog')),
     )
   );
 }

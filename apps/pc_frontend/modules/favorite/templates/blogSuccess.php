@@ -1,11 +1,12 @@
 <?php
 
-include_parts(
+op_include_parts(
   'BlogListPage',
   'blogFavorite',
   array(
+    'class' => 'recentList',
     'title' => __('The favorite newest blog'),
-    'list' => $blogList,
+    'blogRssCacheList' => $blogList,
     'showName' => true
   )
 );

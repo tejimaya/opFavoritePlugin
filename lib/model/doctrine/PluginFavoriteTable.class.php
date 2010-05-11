@@ -160,20 +160,22 @@ class PluginFavoriteTable extends Doctrine_Table
       return array();
     }
 
-    $q = $this->createQuery()
-       ->select('member_id_to')
-       ->where('member_id_from = ?', $member_id_from);
+    $ids = $this->createQuery()
+       ->select('member_id_to, member_id_from')
+       ->where('member_id_from = ?', $member_id_from)
+       ->execute(array(), Doctrine::HYDRATE_NONE);
 
-    $list = array();
-    foreach ($q->execute() as $row)
+    $memberIds = array();
+    foreach ($ids as $id)
     {
-      opBlogPlugin::getBlogListByMemberId($row->getMemberIdTo(), $list);
+      $memberIds[] = $id[0];
     }
-    $list = opBlogPlugin::sortBlogList($list, $size);
-    if ($limitTitle)
-    {
-      opBlogPlugin::limitBlogTitle($list);
-    }
+
+    $list = Doctrine::getTable('BlogRssCache')->createQuery()
+      ->whereIn('member_id', $memberIds)
+      ->orderBy('date DESC')
+      ->limit($size)
+      ->execute();
 
     return $list;
   }
