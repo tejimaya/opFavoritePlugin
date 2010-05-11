@@ -78,10 +78,8 @@ class PluginFavoriteTable extends Doctrine_Table
     }
 
     $q = Doctrine::getTable('Diary')->createQuery()
-      ->select('Diary.*')
-      ->leftJoin('Favorite ON Diary.member_id = Favorite.member_id_to')
-      ->where('Favorite.member_id_from = ?', $member_id_from)
-      ->orderBy('Diary.created_at DESC')
+      ->whereIn('member_id', $this->getFavoriteToIds($member_id_from))
+      ->orderBy('created_at DESC')
       ->limit($size);
 
     $list = array();
@@ -107,9 +105,7 @@ class PluginFavoriteTable extends Doctrine_Table
     }
 
     $q = Doctrine::getTable('Diary')->createQuery()
-      ->select('Diary.*')
-      ->leftJoin('Favorite ON Diary.member_id = Favorite.member_id_to')
-      ->where('Favorite.member_id_from = ?', $member_id_from)
+      ->whereIn('member_id', $this->getFavoriteToIds($member_id_from))
       ->orderBy('Diary.created_at DESC');
 
     $pager = new sfDoctrinePager('Diary', $size);
@@ -160,6 +156,17 @@ class PluginFavoriteTable extends Doctrine_Table
       return array();
     }
 
+    $list = Doctrine::getTable('BlogRssCache')->createQuery()
+      ->whereIn('member_id', $this->getFavoriteToIds($member_id_from))
+      ->orderBy('date DESC')
+      ->limit($size)
+      ->execute();
+
+    return $list;
+  }
+
+  public function getFavoriteToIds($member_id_from)
+  {
     $ids = $this->createQuery()
        ->select('member_id_to, member_id_from')
        ->where('member_id_from = ?', $member_id_from)
@@ -171,13 +178,12 @@ class PluginFavoriteTable extends Doctrine_Table
       $memberIds[] = $id[0];
     }
 
-    $list = Doctrine::getTable('BlogRssCache')->createQuery()
-      ->whereIn('member_id', $memberIds)
-      ->orderBy('date DESC')
-      ->limit($size)
-      ->execute();
+    if (empty($memberIds) && version_compare(OPENPNE_VERSION, '3.5.2-dev', '<'))
+    {
+      $memberIds[] = '0';
+    }
 
-    return $list;
+    return $memberIds;
   }
 
   public function retrieveByMemberIdFromAndTo($member_id_from, $member_id_to)
