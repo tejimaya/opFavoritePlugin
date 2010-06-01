@@ -17,4 +17,4 @@ $options = array(
 );
 op_include_list('introFriend', $list, $options);
 
-echo pager_navigation($pager, 'favorite/list?page=%d', false);
+op_include_pager_navigation($pager, 'favorite/list?page=%d');

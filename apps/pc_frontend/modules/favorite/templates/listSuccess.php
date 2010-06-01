@@ -2,7 +2,7 @@
 <div class="dparts searchResultList"><div class="parts">
 <div class="partsHeading"><h3><?php echo __('Favorite') ?></h3></div>
 
-<div class="pagerRelative"><p class="number"><?php echo pager_navigation($pager, 'favorite/list?page=%d'); ?></p></div>
+<?php op_include_pager_navigation($pager, 'favorite/list?page=%d') ?>
 
 <div class="block">
 
@@ -40,5 +40,6 @@
 </div></div>
 <?php endforeach; ?>
 
-<div class="pagerRelative"><p class="number"><?php echo pager_navigation($pager, 'favorite/list?page=%d'); ?></p></div>
+<?php op_include_pager_navigation($pager, 'favorite/list?page=%d') ?>
+
 </div></div></div>
