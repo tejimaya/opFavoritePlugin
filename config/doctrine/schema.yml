@@ -10,3 +10,6 @@ Favorite:
   relations:
     Member: { local: member_id_to, foreign: id }
     Member_2: { class: Member, local: member_id_from, foreign: id }
+  indexes:
+    member_id_from_INDEX:
+      fields: [member_id_from]
