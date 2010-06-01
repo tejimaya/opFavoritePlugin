@@ -11,7 +11,7 @@
 <table><tbody>
 
 <tr>
-<td rowspan="3" class="photo">
+<td rowspan="2" class="photo">
 <?php echo link_to(image_tag_sf_image($member->getImageFilename(), array('size' => '76x76')), 'member/profile?id=' . $member->getId()); ?><br />
 </td>
 <th><?php echo __('Nickname') ?></th>
