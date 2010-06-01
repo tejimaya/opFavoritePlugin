@@ -9,8 +9,8 @@ if (count($diaryList))
       'title' => __('The favorite newest diary'),
       'list' => $diaryList,
       'showName' => true,
-      'moreInfo' => 'favorite/diary',
-      'link_to' => 'diary/%d'
+      'moreInfo' => '@favorite_diary',
+      'link_to' => '@diary_show?id=%d'
     )
   );
 }
@@ -25,7 +25,7 @@ if (count($blogList))
       'title' => __('The favorite newest blog'),
       'blogRssCacheList' => $blogList,
       'showName' => true,
-      'moreInfo' => array(link_to(__('More info'), 'favorite/blog')),
+      'moreInfo' => array(link_to(__('More info'), '@favorite_blog')),
     )
   );
 }

@@ -2,7 +2,7 @@
 <div class="dparts searchResultList"><div class="parts">
 <div class="partsHeading"><h3><?php echo __('Favorite') ?></h3></div>
 
-<?php op_include_pager_navigation($pager, 'favorite/list?page=%d') ?>
+<?php op_include_pager_navigation($pager, '@favorite_list?page=%d') ?>
 
 <div class="block">
 
@@ -12,7 +12,7 @@
 
 <tr>
 <td rowspan="2" class="photo">
-<?php echo link_to(image_tag_sf_image($member->getImageFilename(), array('size' => '76x76')), 'member/profile?id=' . $member->getId()); ?><br />
+<?php echo link_to(image_tag_sf_image($member->getImageFilename(), array('size' => '76x76')), '@member_profile?id=' . $member->getId()); ?><br />
 </td>
 <th><?php echo __('Nickname') ?></th>
 <td><?php echo $member->getName() ?></td>
@@ -30,8 +30,8 @@
 <td>
 <span class="text"><?php echo distance_of_time_in_words($member->getLastLoginTime()) ?></span>
 <span class="moreInfo">
-<?php echo link_to(__('Show detail'), 'member/profile?id=' . $member->getId()) ?>
- <?php echo link_to(__('Delete'), 'favorite/delete?id=' . $member->getId()) ?>
+<?php echo link_to(__('Show detail'), '@member_profile?id=' . $member->getId()) ?>
+ <?php echo link_to(__('Delete'), '@favorite_delete?id=' . $member->getId()) ?>
 </span>
 </td>
 </tr>
@@ -40,6 +40,6 @@
 </div></div>
 <?php endforeach; ?>
 
-<?php op_include_pager_navigation($pager, 'favorite/list?page=%d') ?>
+<?php op_include_pager_navigation($pager, '@favorite_list?page=%d') ?>
 
 </div></div></div>

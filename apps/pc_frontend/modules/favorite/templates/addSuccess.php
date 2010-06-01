@@ -7,7 +7,7 @@
 
 <tr>
 <th><?php echo __('Photo') ?></th>
-<td><?php echo link_to(image_tag_sf_image($member->getImageFilename(), array('size' => '76x76')), 'member/profile?id=' . $member->getId()); ?></td>
+<td><?php echo link_to(image_tag_sf_image($member->getImageFilename(), array('size' => '76x76')), '@member_profile?id=' . $member->getId()); ?></td>
 </tr>
 
 <tr>

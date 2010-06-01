@@ -1,0 +1,3 @@
+favorite:
+  class: opFavoritePluginPcFrontendRouteCollection
+  options: { name: favorite }
