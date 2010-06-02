@@ -20,11 +20,16 @@ class favoriteComponents extends sfComponents
     $this->favorites = $favoriteTable->retrievesByMemberIdFrom($this->getUser()->getMemberId(), $this->row * $this->col);
     $this->members = $favoriteTable->retrieveMembers($this->favorites);
   }
-  public function executeFavoriteNews()
-  {
-    $favoriteTable = Doctrine::getTable('Favorite');
 
-    $this->diaryList = $favoriteTable->retrieveDiaryList($this->getUser()->getMemberId());
-    $this->blogList = $favoriteTable->getBlogListOfFavorite($this->getUser()->getMemberId(), 10, true);
+  public function executeFavoriteBlogNews()
+  {
+    $max = $this->gadget->getConfig('max');
+    $this->blogList = Doctrine::getTable('Favorite')->getBlogListOfFavorite($this->getUser()->getMemberId(), $max, true);
+  }
+
+  public function executeFavoriteDiaryNews()
+  {
+    $max = $this->gadget->getConfig('max');
+    $this->diaryList = Doctrine::getTable('Favorite')->retrieveDiaryList($this->getUser()->getMemberId(), $max);
   }
 }

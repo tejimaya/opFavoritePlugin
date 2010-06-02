@@ -3,7 +3,11 @@ Gadget:
     type: "sideMenu"
     name: "favoriteListBox"
     sort_order: 40
-  favorite_news:
+  favorite_diary_news:
     type: "contents"
-    name: "favoriteNews"
+    name: "favoriteDiaryNews"
     sort_order: 103
+  favorite_blog_news:
+    type: "contents"
+    name: "favoriteBlogNews"
+    sort_order: 104
