@@ -28,7 +28,7 @@
 <tr class="operation">
 <th><?php echo __('The last login') ?></th>
 <td>
-<span class="text"><?php echo distance_of_time_in_words($member->getLastLoginTime()) ?></span>
+<span class="text"><?php echo op_distance_of_time_in_words($member->getLastLoginTime(), time()) ?></span>
 <span class="moreInfo">
 <?php echo link_to(__('Show detail'), '@member_profile?id=' . $member->getId()) ?>
  <?php echo link_to(__('Delete'), '@favorite_delete?id=' . $member->getId()) ?>
