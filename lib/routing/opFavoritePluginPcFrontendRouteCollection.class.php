@@ -27,9 +27,8 @@ class opFavoritePluginPcFrontendRouteCollection extends opFavoritePluginBaseRout
         array('model' => 'Member', 'type' => 'object')
       ),
       'favorite_diary' => new sfRoute(
-        '/favorite/diary/:page',
-        array('module' => 'favorite', 'action' => 'diary'),
-        array('page' => '\d+')
+        '/favorite/diary',
+        array('module' => 'favorite', 'action' => 'diary')
       ),
       'favorite_blog' => new sfRoute(
         '/favorite/blog',

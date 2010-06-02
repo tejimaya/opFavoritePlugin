@@ -8,10 +8,10 @@
 <?php foreach ($pager->getResults() as $diary): ?>
 <dl>
 <dt><?php echo op_format_date($diary->getCreatedAt(), 'XDateTimeJa') ?></dt>
-<dd><?php echo link_to(op_diary_get_title_and_count($diary), '@diary_show', $diary) ?> (<?php echo $diary->getMember()->getName() ?>)<?php if ($diary->getHasImages()) : ?> <?php echo image_tag('icon_camera.gif', array('alt' => 'photo')) ?><?php endif; ?></dd>
+<dd><?php echo link_to(op_diary_get_title_and_count($diary), '@diary_show?id='.$diary->getId()) ?> (<?php echo $diary->getMember()->getName() ?>)<?php if ($diary->getHasImages()) : ?> <?php echo image_tag('icon_camera.gif', array('alt' => 'photo')) ?><?php endif; ?></dd>
 </dl>
 <?php endforeach; ?>
-<?php op_include_pager_navigation($pager, '@favorite_list?page=%d'); ?>
+<?php op_include_pager_navigation($pager, '@favorite_diary?page=%d'); ?>
 </div></div>
 <?php else: ?>
 <?php op_include_box('diaryList', __('There are no diaries'), array('title' => $title)) ?>
