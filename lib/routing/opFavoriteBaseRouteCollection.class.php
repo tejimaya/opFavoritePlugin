@@ -33,6 +33,14 @@ abstract class opFavoritePluginBaseRouteCollection extends sfRouteCollection
         '/favorite/list',
         array('module' => 'favorite', 'action' => 'list')
       ),
+      'favorite_diary' => new sfRoute(
+        '/favorite/diary',
+        array('module' => 'favorite', 'action' => 'diary')
+      ),
+      'favorite_blog' => new sfRoute(
+        '/favorite/blog',
+        array('module' => 'favorite', 'action' => 'blog')
+      ),
     );
     $this->routes += $this->generateNoDefaults();
   }

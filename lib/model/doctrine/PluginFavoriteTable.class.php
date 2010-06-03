@@ -82,19 +82,7 @@ class PluginFavoriteTable extends Doctrine_Table
       ->orderBy('created_at DESC')
       ->limit($size);
 
-    $list = array();
-    foreach ($q->execute() as $diary)
-    {
-      $list[] = $this->setDiary(
-        strtotime($diary->getCreatedAt()),
-        $diary->getTitle(),
-        $diary->getId(),
-        $diary->getMember()->getName(),
-        $diary->getHasImages()
-      );
-    }
-
-    return $list;
+    return $q->execute();
   }
 
   public function retrieveDiaryPager($member_id_from, $page = 1, $size = 10)

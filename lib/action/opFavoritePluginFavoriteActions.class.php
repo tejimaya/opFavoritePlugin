@@ -60,4 +60,18 @@ class opFavoritePluginFavoriteActions extends sfActions
     Doctrine::getTable('Favorite')->delete( $this->getUser()->getMemberId(), $request->getParameter('id'));
     $this->redirect('favorite/list');
   }
+
+ /**
+  * Executes diary action
+  *
+  * @param sfRequest $request A request object
+  */
+  public function executeDiary($request)
+  {
+    $this->pager = Doctrine::getTable('Favorite')->retrieveDiaryPager($this->getUser()->getMemberId(), $request->getParameter('page', 1));
+    if (!$this->pager->getNbResults())
+    {
+      return sfView::ERROR;
+    }
+  }
 }

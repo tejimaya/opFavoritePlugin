@@ -8,7 +8,7 @@
  * file and the NOTICE file that were distributed with this source code.
  */
 
-class favoriteComponents extends opFavoritePluginFavoriteComponents
+class opFavoritePluginFavoriteComponents extends sfComponents
 {
   public function executeFavoriteListBox()
   {
@@ -19,5 +19,17 @@ class favoriteComponents extends opFavoritePluginFavoriteComponents
     $this->cnt = $favoriteTable->countByMemberId($this->getUser()->getMemberId());
     $this->favorites = $favoriteTable->retrievesByMemberIdFrom($this->getUser()->getMemberId(), $this->row * $this->col);
     $this->members = $favoriteTable->retrieveMembers($this->favorites);
+  }
+
+  public function executeFavoriteBlogNews()
+  {
+    $max = $this->gadget->getConfig('max');
+    $this->blogList = Doctrine::getTable('Favorite')->getBlogListOfFavorite($this->getUser()->getMemberId(), $max, true);
+  }
+
+  public function executeFavoriteDiaryNews()
+  {
+    $max = $this->gadget->getConfig('max');
+    $this->diaryList = Doctrine::getTable('Favorite')->retrieveDiaryList($this->getUser()->getMemberId(), $max);
   }
 }

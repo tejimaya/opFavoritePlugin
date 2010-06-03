@@ -1,15 +1,14 @@
 <?php if (count($diaryList)): ?>
 
 <?php
-include_parts(
+op_include_parts(
   'diaryListBox',
   'favoriteHomeDiary_'.$gadget->getId(),
   array(
+    'class' => 'homeRecentList',
     'title' => __('The favorite newest diary'),
     'list' => $diaryList,
-    'showName' => true,
-    'moreInfo' => '@favorite_diary',
-    'link_to' => '@diary_show?id=%d'
+    'moreInfo' => array(link_to(__('More info'), '@favorite_diary')),
   )
 )
 ?>

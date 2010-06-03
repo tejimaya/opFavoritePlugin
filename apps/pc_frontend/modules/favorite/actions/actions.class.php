@@ -43,20 +43,6 @@ class favoriteActions extends opFavoritePluginFavoriteActions
   }
 
  /**
-  * Executes diary action
-  *
-  * @param sfRequest $request A request object
-  */
-  public function executeDiary($request)
-  {
-    $this->pager = Doctrine::getTable('Favorite')->retrieveDiaryPager($this->getUser()->getMemberId(), $request->getParameter('page', 1));
-    if (!$this->pager->getNbResults())
-    {
-      return sfView::ERROR;
-    }
-  }
-
- /**
   * Executes blog action
   *
   * @param sfRequest $request A request object
