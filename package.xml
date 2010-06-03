@@ -13,8 +13,8 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2010-06-02</date>
- <time>18:20:30</time>
+ <date>2010-06-03</date>
+ <time>20:16:10</time>
  <version>
   <release>1.0.0</release>
   <api>1.0.0</api>
@@ -25,47 +25,56 @@
  </stability>
  <license>apache</license>
  <notes>
-added routing, fixed bug.
+added index, routing roule, mobile gadget, fixed bug.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="3c4f43690774ad7861511e69478c7559" name="apps/mobile_frontend/config/routing.yml" role="data" />
    <file baseinstalldir="/" md5sum="52535e4b2e16dc7a29cecfb32706e13c" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="32ebda169fea71391474310594198a29" name="apps/mobile_frontend/modules/favorite/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="fb5117bd84ccab5f195f3ff458b5f65c" name="apps/mobile_frontend/modules/favorite/actions/components.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="ecd9340ec0cf87dfa757b521072bc9e5" name="apps/mobile_frontend/modules/favorite/templates/diaryError.php" role="data" />
+   <file baseinstalldir="/" md5sum="0861c87e0f8455ccaf2f8cff5eadfae7" name="apps/mobile_frontend/modules/favorite/templates/diarySuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="303ef3fffadc57ed83a69a115f655023" name="apps/mobile_frontend/modules/favorite/templates/listError.php" role="data" />
    <file baseinstalldir="/" md5sum="16ec550a3f37be8a7bb9a94991759532" name="apps/mobile_frontend/modules/favorite/templates/listSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="760403063e3e01552d5b5f649ad849ab" name="apps/mobile_frontend/modules/favorite/templates/_addFavoriteLink.php" role="data" />
+   <file baseinstalldir="/" md5sum="339a25082215f93702d3271b3918ca4a" name="apps/mobile_frontend/modules/favorite/templates/_favoriteDiaryNews.php" role="data" />
    <file baseinstalldir="/" md5sum="086d3f8f8de79dcf1420b503d7d9bf8b" name="apps/mobile_frontend/modules/member/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="4af3ef1b255474150f1edd04f53d0b71" name="apps/pc_frontend/config/routing.yml" role="data" />
-   <file baseinstalldir="/" md5sum="4dbdf2f352bdcf701960f1a4bfab4a93" name="apps/pc_frontend/modules/favorite/actions/actions.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="62cf13dd5ba22b8b211dc711557782c7" name="apps/pc_frontend/modules/favorite/actions/components.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="c1c1bf8676490b8b2b57f14d22a1c1c7" name="apps/pc_frontend/modules/favorite/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="4e2e8979e839bea3991d7fa5e578ec61" name="apps/pc_frontend/modules/favorite/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/pc_frontend/modules/favorite/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="039ea1fccb560f806527952fb077fbc5" name="apps/pc_frontend/modules/favorite/templates/addAlert.php" role="data" />
    <file baseinstalldir="/" md5sum="b2919df9145cf185d18346a91d15d17e" name="apps/pc_frontend/modules/favorite/templates/addSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="0379e98c2af99af16581eb819ea564b5" name="apps/pc_frontend/modules/favorite/templates/blogAlert.php" role="data" />
    <file baseinstalldir="/" md5sum="e61dfcdba3a8203218d99d747df2f480" name="apps/pc_frontend/modules/favorite/templates/blogSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="517502488d12f37dab1d6116cb857423" name="apps/pc_frontend/modules/favorite/templates/diaryAlert.php" role="data" />
-   <file baseinstalldir="/" md5sum="42549ac90ac0e9b6106e5fd9f85020c9" name="apps/pc_frontend/modules/favorite/templates/diarySuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="a6104290b08645d235c810ca0a3dc754" name="apps/pc_frontend/modules/favorite/templates/diarySuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="59696aebdc7945c9b13185d90c8d9ded" name="apps/pc_frontend/modules/favorite/templates/listError.php" role="data" />
    <file baseinstalldir="/" md5sum="1cd47b0ecded237ce852e65333d7207f" name="apps/pc_frontend/modules/favorite/templates/listSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="71e800a7116fb3f91b8cda8779ac164e" name="apps/pc_frontend/modules/favorite/templates/_favoriteBlogNews.php" role="data" />
+   <file baseinstalldir="/" md5sum="c3a881f9060859775c5cb29801bb647c" name="apps/pc_frontend/modules/favorite/templates/_favoriteDiaryNews.php" role="data" />
    <file baseinstalldir="/" md5sum="fcbf6e87774115149548412da1af0907" name="apps/pc_frontend/modules/favorite/templates/_favoriteListBox.php" role="data" />
-   <file baseinstalldir="/" md5sum="2fe1d08a1af4204ab6e6c4a25795701b" name="apps/pc_frontend/modules/favorite/templates/_favoriteNews.php" role="data" />
-   <file baseinstalldir="/" md5sum="06bf1966d9814cbd110820d60089369f" name="apps/pc_frontend/templates/_partsDiaryListBox.php" role="data" />
-   <file baseinstalldir="/" md5sum="ff07bd98e195e8def88a798a89d6382d" name="config/gadget.yml" role="data" />
+   <file baseinstalldir="/" md5sum="81b7f5916d0c81a0dbbe2238d6dc3922" name="apps/pc_frontend/templates/_partsDiaryListBox.php" role="data" />
+   <file baseinstalldir="/" md5sum="ffa30748068ac550b7a22f80e01ca6d6" name="config/gadget.yml" role="data" />
+   <file baseinstalldir="/" md5sum="05acc4768ec60adbf23e3fdcf189359e" name="config/mobile_gadget.yml" role="data" />
    <file baseinstalldir="/" md5sum="ea3d8f01141438ce98767c764ff8fe26" name="config/doctrine/schema.yml" role="data" />
-   <file baseinstalldir="/" md5sum="56495fd7928789be5374d009951adb54" name="data/fixtures/000_revision.yml" role="data" />
+   <file baseinstalldir="/" md5sum="80d7f1087c420c1853f0481ac4d0ccd6" name="data/fixtures/000_revision.yml" role="data" />
    <file baseinstalldir="/" md5sum="936ffc03a5f8a8a3a57008cd63d53652" name="data/fixtures/010_navigation.yml" role="data" />
-   <file baseinstalldir="/" md5sum="34ecb0528bcc8089d5559c5a1f601b44" name="data/fixtures/020_gadget.yml" role="data" />
+   <file baseinstalldir="/" md5sum="3fe8bd41272048c0cc6e06d9f7be3d68" name="data/fixtures/020_gadget.yml" role="data" />
    <file baseinstalldir="/" md5sum="d6522bbfef454648cf30135e63825187" name="data/migrations/1.0.0/001_add_index_to_favorite.php" role="data" />
+   <file baseinstalldir="/" md5sum="7681afe1a4869cd629c3d6178268ea3a" name="data/migrations/1.0.0/002_update_gadget.php" role="data" />
+   <file baseinstalldir="/" md5sum="00450e9ee4f5c9cb600ce13e29fc8552" name="data/migrations/1.0.0/003_insert_mobile_gadget.php" role="data" />
    <file baseinstalldir="/" md5sum="8f0d1190de51deb393520c8766445d55" name="i18n/messages.ja.xml" role="data" />
-   <file baseinstalldir="/" md5sum="e443e60d3f6c8edfe9c7a90a1a8b687f" name="lib/action/opFavoritePluginFavoriteActions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="4403655514dd10dd6d0786d819da7b72" name="lib/action/opFavoritePluginFavoriteActions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="853ab8f4937bf59337dada6d950b8456" name="lib/action/opFavoritePluginFavoriteComponents.class.php" role="data" />
    <file baseinstalldir="/" md5sum="ec08c93196652cdf1acb7e45c78a8cf7" name="lib/filter/doctrine/PluginFavoriteFormFilter.class.php" role="data" />
    <file baseinstalldir="/" md5sum="5873a033e00411563592db32a6057b96" name="lib/form/doctrine/PluginFavoriteForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="d9f47c3990403d6faddb868f32a3d7c5" name="lib/model/doctrine/PluginFavorite.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="da3ca5e6ede6433348ca4d35894114f4" name="lib/model/doctrine/PluginFavoriteTable.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="40f26f1d7903697e3b0a5e5011d6c0ab" name="lib/routing/opFavoriteBaseRouteCollection.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="55f2080ae45575388df1fe4875829809" name="lib/model/doctrine/PluginFavoriteTable.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="5913ddc0f23dfbcb8fbc889ea395e6ff" name="lib/routing/opFavoriteBaseRouteCollection.class.php" role="data" />
    <file baseinstalldir="/" md5sum="82697aaf38d25956dad69d54ab1fc5b0" name="lib/routing/opFavoritePluginMobileFrontendRouteCollection.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="0384b0b0061230305eb60e702dd79999" name="lib/routing/opFavoritePluginPcFrontendRouteCollection.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="0ec6459bf6978861f6e28b07102383b6" name="lib/routing/opFavoritePluginPcFrontendRouteCollection.class.php" role="data" />
   </dir>
  </contents>
  <dependencies>
@@ -104,10 +113,10 @@ This plugin is now compatible with Doctrine
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2010-06-02</date>
+   <date>2010-06-03</date>
    <license>apache</license>
    <notes>
-added routing, fixed bug.
+added index, routing roule, mobile gadget, fixed bug.
    </notes>
   </release>
  </changelog>
