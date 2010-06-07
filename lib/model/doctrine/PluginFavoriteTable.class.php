@@ -78,8 +78,9 @@ class PluginFavoriteTable extends Doctrine_Table
     }
 
     $q = Doctrine::getTable('Diary')->createQuery()
-      ->whereIn('member_id', $this->getFavoriteToIds($member_id_from))
-      ->orderBy('created_at DESC')
+      ->whereIn('member_id', $this->getFavoriteToIds($member_id_from));
+    Doctrine::getTable('Diary')->addPublicFlagQuery($q, DiaryTable::PUBLIC_FLAG_SNS);
+    $q->orderBy('created_at DESC')
       ->limit($size);
 
     return $q->execute();
@@ -93,8 +94,10 @@ class PluginFavoriteTable extends Doctrine_Table
     }
 
     $q = Doctrine::getTable('Diary')->createQuery()
-      ->whereIn('member_id', $this->getFavoriteToIds($member_id_from))
-      ->orderBy('Diary.created_at DESC');
+      ->whereIn('member_id', $this->getFavoriteToIds($member_id_from));
+    Doctrine::getTable('Diary')->addPublicFlagQuery($q, DiaryTable::PUBLIC_FLAG_SNS);
+    $q->orderBy('created_at DESC')
+      ->limit($size);
 
     $pager = new sfDoctrinePager('Diary', $size);
     $pager->setQuery($q);
