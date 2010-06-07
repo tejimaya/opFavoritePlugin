@@ -13,11 +13,11 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2010-06-03</date>
- <time>20:16:10</time>
+ <date>2010-06-07</date>
+ <time>12:50:54</time>
  <version>
-  <release>1.0.0</release>
-  <api>1.0.0</api>
+  <release>1.0.0.1</release>
+  <api>1.0.0.1</api>
  </version>
  <stability>
   <release>beta</release>
@@ -25,7 +25,7 @@
  </stability>
  <license>apache</license>
  <notes>
-added index, routing roule, mobile gadget, fixed bug.
+fixed the diary display was not taking the public range into consideration.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -71,7 +71,7 @@ added index, routing roule, mobile gadget, fixed bug.
    <file baseinstalldir="/" md5sum="ec08c93196652cdf1acb7e45c78a8cf7" name="lib/filter/doctrine/PluginFavoriteFormFilter.class.php" role="data" />
    <file baseinstalldir="/" md5sum="5873a033e00411563592db32a6057b96" name="lib/form/doctrine/PluginFavoriteForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="d9f47c3990403d6faddb868f32a3d7c5" name="lib/model/doctrine/PluginFavorite.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="55f2080ae45575388df1fe4875829809" name="lib/model/doctrine/PluginFavoriteTable.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="81351f10377ddc3b8450470e525c5bc0" name="lib/model/doctrine/PluginFavoriteTable.class.php" role="data" />
    <file baseinstalldir="/" md5sum="5913ddc0f23dfbcb8fbc889ea395e6ff" name="lib/routing/opFavoriteBaseRouteCollection.class.php" role="data" />
    <file baseinstalldir="/" md5sum="82697aaf38d25956dad69d54ab1fc5b0" name="lib/routing/opFavoritePluginMobileFrontendRouteCollection.class.php" role="data" />
    <file baseinstalldir="/" md5sum="0ec6459bf6978861f6e28b07102383b6" name="lib/routing/opFavoritePluginPcFrontendRouteCollection.class.php" role="data" />
@@ -117,6 +117,21 @@ This plugin is now compatible with Doctrine
    <license>apache</license>
    <notes>
 added index, routing roule, mobile gadget, fixed bug.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.0.1</release>
+    <api>1.0.0.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-06-07</date>
+   <license>apache</license>
+   <notes>
+fixed the diary display was not taking the public range into consideration.
    </notes>
   </release>
  </changelog>
