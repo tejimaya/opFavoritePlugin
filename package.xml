@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -13,20 +13,18 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2010-06-07</date>
- <time>12:50:54</time>
+ <date>2010-06-25</date>
+ <time>23:05:52</time>
  <version>
-  <release>1.0.0.1</release>
-  <api>1.0.0.1</api>
+  <release>1.0.0.2</release>
+  <api>1.0.0.2</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license>apache</license>
- <notes>
-fixed the diary display was not taking the public range into consideration.
- </notes>
+ <notes>added the onDelete for relation of the favorite table.</notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="3c4f43690774ad7861511e69478c7559" name="apps/mobile_frontend/config/routing.yml" role="data" />
@@ -58,13 +56,14 @@ fixed the diary display was not taking the public range into consideration.
    <file baseinstalldir="/" md5sum="81b7f5916d0c81a0dbbe2238d6dc3922" name="apps/pc_frontend/templates/_partsDiaryListBox.php" role="data" />
    <file baseinstalldir="/" md5sum="ffa30748068ac550b7a22f80e01ca6d6" name="config/gadget.yml" role="data" />
    <file baseinstalldir="/" md5sum="05acc4768ec60adbf23e3fdcf189359e" name="config/mobile_gadget.yml" role="data" />
-   <file baseinstalldir="/" md5sum="ea3d8f01141438ce98767c764ff8fe26" name="config/doctrine/schema.yml" role="data" />
-   <file baseinstalldir="/" md5sum="80d7f1087c420c1853f0481ac4d0ccd6" name="data/fixtures/000_revision.yml" role="data" />
+   <file baseinstalldir="/" md5sum="44f48504dc57b52b5a841666a2af4b8e" name="config/doctrine/schema.yml" role="data" />
+   <file baseinstalldir="/" md5sum="4d8e94758d69b616bf0908d289229fe6" name="data/fixtures/000_revision.yml" role="data" />
    <file baseinstalldir="/" md5sum="936ffc03a5f8a8a3a57008cd63d53652" name="data/fixtures/010_navigation.yml" role="data" />
    <file baseinstalldir="/" md5sum="3fe8bd41272048c0cc6e06d9f7be3d68" name="data/fixtures/020_gadget.yml" role="data" />
    <file baseinstalldir="/" md5sum="d6522bbfef454648cf30135e63825187" name="data/migrations/1.0.0/001_add_index_to_favorite.php" role="data" />
    <file baseinstalldir="/" md5sum="7681afe1a4869cd629c3d6178268ea3a" name="data/migrations/1.0.0/002_update_gadget.php" role="data" />
    <file baseinstalldir="/" md5sum="00450e9ee4f5c9cb600ce13e29fc8552" name="data/migrations/1.0.0/003_insert_mobile_gadget.php" role="data" />
+   <file baseinstalldir="/" md5sum="f39918212121ef18371be8d2d22dbc76" name="data/migrations/1.0.0.2/004_add_foreign_key_for_favorite.php" role="data" />
    <file baseinstalldir="/" md5sum="8f0d1190de51deb393520c8766445d55" name="i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="4403655514dd10dd6d0786d819da7b72" name="lib/action/opFavoritePluginFavoriteActions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="853ab8f4937bf59337dada6d950b8456" name="lib/action/opFavoritePluginFavoriteComponents.class.php" role="data" />
@@ -85,6 +84,11 @@ fixed the diary display was not taking the public range into consideration.
    <pearinstaller>
     <min>1.4.0</min>
    </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.2.0</min>
+   </package>
   </required>
  </dependencies>
  <phprelease />
@@ -100,9 +104,7 @@ fixed the diary display was not taking the public range into consideration.
    </stability>
    <date>2009-05-29</date>
    <license>apache</license>
-   <notes>
-This plugin is now compatible with Doctrine
-   </notes>
+   <notes>This plugin is now compatible with Doctrine</notes>
   </release>
   <release>
    <version>
@@ -115,9 +117,7 @@ This plugin is now compatible with Doctrine
    </stability>
    <date>2010-06-03</date>
    <license>apache</license>
-   <notes>
-added index, routing roule, mobile gadget, fixed bug.
-   </notes>
+   <notes>added index, routing roule, mobile gadget, fixed bug.</notes>
   </release>
   <release>
    <version>
@@ -130,9 +130,20 @@ added index, routing roule, mobile gadget, fixed bug.
    </stability>
    <date>2010-06-07</date>
    <license>apache</license>
-   <notes>
-fixed the diary display was not taking the public range into consideration.
-   </notes>
+   <notes>fixed the diary display was not taking the public range into consideration.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.0.2</release>
+    <api>1.0.0.2</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-06-25</date>
+   <license>apache</license>
+   <notes>added the onDelete for relation of the favorite table.</notes>
   </release>
  </changelog>
 </package>
