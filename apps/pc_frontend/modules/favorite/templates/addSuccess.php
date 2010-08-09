@@ -29,11 +29,13 @@
 
 </tbody></table>
 
+<?php $form = new BaseForm() ?>
 <div class="operation">
 <ul class="moreInfo button">
 <li>
 <form method="post" action="">
-<input type="hidden" name="add" value="1">
+<input type="hidden" name="add" value="1"/>
+<input type="hidden" name="<?php echo $form->getCSRFFieldName() ?>" value="<?php echo $form->getCSRFToken() ?>"/>
 <input type="submit" value=<?php echo __('Yes') ?> class="input_submit"/>
 </form>
 </li>

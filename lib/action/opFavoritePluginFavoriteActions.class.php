@@ -57,6 +57,7 @@ class opFavoritePluginFavoriteActions extends sfActions
   */
   public function executeDelete($request)
   {
+    $request->checkCSRFProtection();
     Doctrine::getTable('Favorite')->delete( $this->getUser()->getMemberId(), $request->getParameter('id'));
     $this->redirect('favorite/list');
   }
