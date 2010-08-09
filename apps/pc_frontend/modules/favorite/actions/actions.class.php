@@ -30,6 +30,7 @@ class favoriteActions extends opFavoritePluginFavoriteActions
     {
       if ($request->hasParameter('add'))
       {
+        $request->checkCSRFProtection();
         FavoritePeer::add($this->getUser()->getMemberId(), $this->id);
         $this->redirect('favorite/list');
       }

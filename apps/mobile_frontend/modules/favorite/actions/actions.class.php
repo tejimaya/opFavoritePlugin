@@ -25,6 +25,7 @@ class favoriteActions extends opFavoritePluginFavoriteActions
   */
   public function executeAdd($request)
   {
+    $request->checkCSRFProtection();
     $this->idCheck();
     FavoritePeer::add($this->getUser()->getMemberId(), $this->id);
     $this->redirect('favorite/list');

@@ -27,9 +27,11 @@
 
 </tbody></table>
 
+<?php $form = new sfForm() ?>
 <div style="border-top: 1px solid #CCCCCC; padding: 2px">
 <form style="float: left; padding-left: 38%" method="post" action="">
-<input type="hidden" name="add" value=true>
+<input type="hidden" name="add" value="1"/>
+<input type="hidden" name="<?php echo $form->getCSRFFieldName() ?>" value="<?php echo $form->getCSRFToken() ?>"/>
 <input style="width: 60px" type="submit" value="<?php echo __('Yes') ?>" /></form>
 <form style="float: right; padding-right: 38%" method="post" action="">
 <input style="width: 60px" type="submit" value="<?php echo __('No') ?>" /></form>

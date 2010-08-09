@@ -57,6 +57,7 @@ class opFavoritePluginFavoriteActions extends sfActions
   */
   public function executeDelete($request)
   {
+    $request->checkCSRFProtection();
     FavoritePeer::delete( $this->getUser()->getMemberId(), $request->getParameter('id'));
     $this->redirect('favorite/list');
   }
