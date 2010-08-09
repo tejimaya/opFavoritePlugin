@@ -6,11 +6,12 @@ echo '<center>';
 echo pager_total($pager);
 echo '</center>';
 
+$form = new sfForm();
 $list = array();
 foreach ($members as $member)
 {
-  $list[] = link_to($member->getName(), 'member/profile?id=' . $member->getId())
-            . '[' . link_to(__('Delete'), 'favorite/delete?id=' . $member->getId()) . ']';
+  $list[] = link_to($member->getName(), 'member/profile?id='.$member->getId())
+          . '['.link_to(__('Delete'), 'favorite/delete?id='.$member->getId().'&'.$form->getCSRFFieldName().'='.$form->getCSRFToken()).']';
 }
 $options = array(
   'border' => true,

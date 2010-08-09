@@ -6,6 +6,7 @@
 
 <div class="block">
 
+<?php $form = new sfForm() ?>
 <?php foreach ($members as $member): ?>
 <div class="ditem"><div class="item">
 <table><tbody>
@@ -30,8 +31,8 @@
 <td>
 <span class="text"><?php echo distance_of_time_in_words($member->getLastLoginTime()) ?></span>
 <span class="moreInfo">
-<?php echo link_to(__('Show detail'), 'member/profile?id=' . $member->getId()) ?>
- <?php echo link_to(__('Delete'), 'favorite/delete?id=' . $member->getId()) ?>
+<?php echo link_to(__('Show detail'), 'member/profile?id='.$member->getId()) ?>
+ <?php echo link_to(__('Delete'), 'favorite/delete?id='.$member->getId().'&'.$form->getCSRFFieldName().'='.$form->getCSRFToken()) ?>
 </span>
 </td>
 </tr>
