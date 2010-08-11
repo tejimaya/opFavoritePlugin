@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -13,37 +13,39 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2009-05-29</date>
- <time>07:20:28</time>
+ <date>2010-08-11</date>
+ <time>13:21:34</time>
  <version>
-  <release>0.9.0</release>
-  <api>0.9.0</api>
+  <release>0.9.0.1</release>
+  <api>0.9.0.1</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license>apache</license>
- <notes>This plugin is now compatible with Doctrine</notes>
+ <notes>
+fixed security issue of CSRF.
+ </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="52535e4b2e16dc7a29cecfb32706e13c" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
-   <file baseinstalldir="/" md5sum="32ebda169fea71391474310594198a29" name="apps/mobile_frontend/modules/favorite/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="0d4bff5d5a37167c115b6514b8b5d515" name="apps/mobile_frontend/modules/favorite/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="303ef3fffadc57ed83a69a115f655023" name="apps/mobile_frontend/modules/favorite/templates/listError.php" role="data" />
-   <file baseinstalldir="/" md5sum="4ede3fc220f429a133124b452f0da548" name="apps/mobile_frontend/modules/favorite/templates/listSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="d8970fb4da58b7f0c3a81b1b188a3cd3" name="apps/mobile_frontend/modules/favorite/templates/_addFavoriteLink.php" role="data" />
+   <file baseinstalldir="/" md5sum="9071c3afe28a779c129c57bd515fb8ae" name="apps/mobile_frontend/modules/favorite/templates/listSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="98e40ed4d836bddf6305ae323d0858b2" name="apps/mobile_frontend/modules/favorite/templates/_addFavoriteLink.php" role="data" />
    <file baseinstalldir="/" md5sum="086d3f8f8de79dcf1420b503d7d9bf8b" name="apps/mobile_frontend/modules/member/config/view.yml" role="data" />
-   <file baseinstalldir="/" md5sum="4dbdf2f352bdcf701960f1a4bfab4a93" name="apps/pc_frontend/modules/favorite/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="7d547e6583edb03a9e33819a5d18391e" name="apps/pc_frontend/modules/favorite/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="62cf13dd5ba22b8b211dc711557782c7" name="apps/pc_frontend/modules/favorite/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/pc_frontend/modules/favorite/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="039ea1fccb560f806527952fb077fbc5" name="apps/pc_frontend/modules/favorite/templates/addAlert.php" role="data" />
-   <file baseinstalldir="/" md5sum="d357257cb27b204af33f4fc0640b548f" name="apps/pc_frontend/modules/favorite/templates/addSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="347890afb49ca145417a68fe05849b93" name="apps/pc_frontend/modules/favorite/templates/addSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="0379e98c2af99af16581eb819ea564b5" name="apps/pc_frontend/modules/favorite/templates/blogAlert.php" role="data" />
    <file baseinstalldir="/" md5sum="922dedd07820c082366794ec7265dd59" name="apps/pc_frontend/modules/favorite/templates/blogSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="517502488d12f37dab1d6116cb857423" name="apps/pc_frontend/modules/favorite/templates/diaryAlert.php" role="data" />
    <file baseinstalldir="/" md5sum="a10eb39d20fb08a76e06dcc5fdf64a06" name="apps/pc_frontend/modules/favorite/templates/diarySuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="59696aebdc7945c9b13185d90c8d9ded" name="apps/pc_frontend/modules/favorite/templates/listError.php" role="data" />
-   <file baseinstalldir="/" md5sum="85d32fad39eee9b6dc148b99acd29286" name="apps/pc_frontend/modules/favorite/templates/listSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="2f8c0edaa435a48d728df69dd35d84b0" name="apps/pc_frontend/modules/favorite/templates/listSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="6604ca258a9a9573e4ab31ac380fc758" name="apps/pc_frontend/modules/favorite/templates/_favoriteListBox.php" role="data" />
    <file baseinstalldir="/" md5sum="3554821be34b1cc53ca0ccd4e0250c65" name="apps/pc_frontend/modules/favorite/templates/_favoriteNews.php" role="data" />
    <file baseinstalldir="/" md5sum="06bf1966d9814cbd110820d60089369f" name="apps/pc_frontend/templates/_partsDiaryListBox.php" role="data" />
@@ -52,7 +54,7 @@
    <file baseinstalldir="/" md5sum="936ffc03a5f8a8a3a57008cd63d53652" name="data/fixtures/010_navigation.yml" role="data" />
    <file baseinstalldir="/" md5sum="34ecb0528bcc8089d5559c5a1f601b44" name="data/fixtures/020_gadget.yml" role="data" />
    <file baseinstalldir="/" md5sum="8f0d1190de51deb393520c8766445d55" name="i18n/messages.ja.xml" role="data" />
-   <file baseinstalldir="/" md5sum="e443e60d3f6c8edfe9c7a90a1a8b687f" name="lib/action/opFavoritePluginFavoriteActions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="67ba075a537f055c7b8a2a2d017484e4" name="lib/action/opFavoritePluginFavoriteActions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="ec08c93196652cdf1acb7e45c78a8cf7" name="lib/filter/doctrine/PluginFavoriteFormFilter.class.php" role="data" />
    <file baseinstalldir="/" md5sum="5873a033e00411563592db32a6057b96" name="lib/form/doctrine/PluginFavoriteForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="d9f47c3990403d6faddb868f32a3d7c5" name="lib/model/doctrine/PluginFavorite.class.php" role="data" />
@@ -67,11 +69,6 @@
    <pearinstaller>
     <min>1.4.0</min>
    </pearinstaller>
-   <package>
-    <name>symfony</name>
-    <channel>pear.symfony-project.com</channel>
-    <min>1.2.0</min>
-   </package>
   </required>
  </dependencies>
  <phprelease />
@@ -87,7 +84,24 @@
    </stability>
    <date>2009-05-29</date>
    <license>apache</license>
-   <notes>This plugin is now compatible with Doctrine</notes>
+   <notes>
+This plugin is now compatible with Doctrine
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.9.0.1</release>
+    <api>0.9.0.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-08-11</date>
+   <license>apache</license>
+   <notes>
+fixed security issue of CSRF.
+   </notes>
   </release>
  </changelog>
 </package>
