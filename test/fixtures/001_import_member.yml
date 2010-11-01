@@ -1,7 +1,7 @@
 Member:
   first_member:
     id: 1
-    name: "A"
+    name: "<&\"'>Member.name ESCAPING HTML TEST DATA"
     is_active: 1
 
   second_member:
@@ -24,3 +24,13 @@ MemberConfig:
     name: "password"
     value: <?php echo md5('password') . "\n"; ?>
     Member: first_member
+
+  third_member_member_config_pc_address:
+    name: "pc_address"
+    value: "sns3@example.com"
+    Member: third_member
+
+  third_member_member_config_password:
+    name: "password"
+    value: <?php echo md5('password') . "\n"; ?>
+    Member: third_member
