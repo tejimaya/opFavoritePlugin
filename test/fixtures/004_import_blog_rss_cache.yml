@@ -1,0 +1,15 @@
+<?php if (class_exists('BlogRssCache')): ?>
+Gadget:
+  favorite_blog_news:
+    type: "contents"
+    name: "favoriteBlogNews"
+    sort_order: 10
+
+BlogRssCache:
+  first_member_blog_rss_cache:
+    Member: third_member
+    title: "<&\"'>BlogRssCache.title ESCAPING HTML TEST DATA"
+    description: "description"
+    link: "http://localhost/"
+    date: <?php echo date("Y-m-d H:i:s\n") ?>
+<?php endif ?>

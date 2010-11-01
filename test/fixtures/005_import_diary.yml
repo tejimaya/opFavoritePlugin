@@ -1,0 +1,17 @@
+<?php if (class_exists('Diary')): ?>
+Gadget:
+  favorite_diary_news:
+    type: "contents"
+    name: "favoriteDiaryNews"
+    sort_order: 20
+  mobile_favorite_diary_news:
+    type: "mobileContents"
+    name: "favoriteDiaryNews"
+    sort_order: 20
+
+Diary:
+  first_member_diary:
+    Member: first_member
+    title: "<&\"'>Diary.title ESCAPING HTML TEST DATA"
+    body: "body"
+<?php endif ?>
