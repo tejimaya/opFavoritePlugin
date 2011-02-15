@@ -78,7 +78,7 @@ class PluginFavoriteTable extends Doctrine_Table
     }
 
     $q = Doctrine::getTable('Diary')->createQuery()
-      ->whereIn('member_id', $this->getFavoriteToIds($member_id_from));
+      ->whereIn('member_id', $this->getShowMemberIds($member_id_from));
     Doctrine::getTable('Diary')->addPublicFlagQuery($q, DiaryTable::PUBLIC_FLAG_SNS);
     $q->orderBy('created_at DESC')
       ->limit($size);
@@ -94,7 +94,7 @@ class PluginFavoriteTable extends Doctrine_Table
     }
 
     $q = Doctrine::getTable('Diary')->createQuery()
-      ->whereIn('member_id', $this->getFavoriteToIds($member_id_from));
+      ->whereIn('member_id', $this->getShowMemberIds($member_id_from));
     Doctrine::getTable('Diary')->addPublicFlagQuery($q, DiaryTable::PUBLIC_FLAG_SNS);
     $q->orderBy('created_at DESC')
       ->limit($size);
@@ -140,7 +140,7 @@ class PluginFavoriteTable extends Doctrine_Table
     );
   }
 
-  public function getBlogListOfFavorite($member_id_from, $size=20, $limitTitle = false)
+  public function getBlogListOfFavorite($memberId, $size=20, $limitTitle = false)
   {
     if (!class_exists('opBlogPlugin'))
     {
@@ -148,7 +148,7 @@ class PluginFavoriteTable extends Doctrine_Table
     }
 
     $list = Doctrine::getTable('BlogRssCache')->createQuery()
-      ->whereIn('member_id', $this->getFavoriteToIds($member_id_from))
+      ->whereIn('member_id', $this->getShowMemberIds($memberId))
       ->orderBy('date DESC')
       ->limit($size)
       ->execute();
@@ -175,6 +175,14 @@ class PluginFavoriteTable extends Doctrine_Table
     }
 
     return $memberIds;
+  }
+
+  public function getShowMemberIds($memberId)
+  {
+    $memberIds = $this->getFavoriteToIds($memberId);
+    $blockedMemberIds = Doctrine::getTable('MemberRelationship')->getBlockedMemberIdsByTo($memberId);
+
+    return array_diff($memberIds, $blockedMemberIds);
   }
 
   public function retrieveByMemberIdFromAndTo($member_id_from, $member_id_to)

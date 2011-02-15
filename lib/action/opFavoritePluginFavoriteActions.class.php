@@ -35,6 +35,23 @@ class opFavoritePluginFavoriteActions extends sfActions
   }
 
  /**
+  * Executes add action
+  *
+  * @param sfRequest $request A request object
+  */
+  public function executeAdd($request)
+  {
+    $this->idCheck();
+
+    $relation = Doctrine::getTable('MemberRelationship')
+      ->retrieveByFromAndTo($this->id, $this->getUser()->getMemberId());
+    if ($relation)
+    {
+      $this->forward404If($relation->getIsAccessBlock());
+    }
+  }
+
+ /**
   * Executes list action
   *
   * @param sfRequest $request A request object
@@ -72,7 +89,7 @@ class opFavoritePluginFavoriteActions extends sfActions
     $this->pager = Doctrine::getTable('Favorite')->retrieveDiaryPager($this->getUser()->getMemberId(), $request->getParameter('page', 1));
     if (!$this->pager->getNbResults())
     {
-      return sfView::ERROR;
+      return sfView::ALERT;
     }
   }
 }

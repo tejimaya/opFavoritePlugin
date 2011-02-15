@@ -25,8 +25,8 @@ class favoriteActions extends opFavoritePluginFavoriteActions
   */
   public function executeAdd($request)
   {
+    parent::executeAdd($request);
     $request->checkCSRFProtection();
-    $this->idCheck();
     Doctrine::getTable('Favorite')->add($this->getUser()->getMemberId(), $this->id);
     $this->redirect('favorite/list');
   }
