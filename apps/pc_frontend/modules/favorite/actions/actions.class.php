@@ -24,7 +24,7 @@ class favoriteActions extends opFavoritePluginFavoriteActions
   */
   public function executeAdd($request)
   {
-    $this->idCheck();
+    parent::executeAdd($request);
     $favoriteTable = Doctrine::getTable('Favorite');
     if ($request->isMethod('post'))
     {
