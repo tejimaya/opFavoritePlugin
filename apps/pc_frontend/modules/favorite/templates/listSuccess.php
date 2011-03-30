@@ -19,10 +19,11 @@
 <td><?php echo $member->getName() ?></td>
 </tr>
 
-<?php if ($member->getProfile('self_intro')): ?>
+<?php $self_intro = $member->getProfile('self_intro'); ?>
+<?php if ($self_intro && $self_intro->isAllowed($sf_user->getMember()->getRawValue(), 'view')): ?>
 <tr>
-<th><?php echo $member->getProfile('self_intro')->getCaption() ?></th>
-<td><?php echo nl2br($member->getProfile('self_intro')) ?></td>
+<th><?php echo $self_intro->getCaption() ?></th>
+<td><?php echo nl2br($self_intro) ?></td>
 </tr>
 <?php endif ?>
 
