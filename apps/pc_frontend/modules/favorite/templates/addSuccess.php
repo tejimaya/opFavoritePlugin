@@ -15,10 +15,13 @@
 <td><?php echo $member->getName() ?></td>
 </tr>
 
+<?php $self_intro = $member->getProfile('self_intro'); ?>
+<?php if ($self_intro && $self_intro->isViewable()): ?>
 <tr>
-<th><?php echo $member->getProfile('self_intro')->getCaption() ?></th>
-<td><?php echo $member->getProfile('self_intro') ?></td>
+<th><?php echo $self_intro->getCaption() ?></th>
+<td><?php echo $self_intro ?></td>
 </tr>
+<?php endif; ?>
 
 <tr>
 <th><?php echo __('The last login') ?></th>
