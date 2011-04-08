@@ -13,11 +13,11 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2010-08-11</date>
- <time>13:16:55</time>
+ <date>2011-04-09</date>
+ <time>04:14:58</time>
  <version>
-  <release>0.8.0.1</release>
-  <api>0.8.0.1</api>
+  <release>0.8.0.2</release>
+  <api>0.8.0.2</api>
  </version>
  <stability>
   <release>beta</release>
@@ -25,7 +25,7 @@
  </stability>
  <license>apache</license>
  <notes>
-fixed security issue of CSRF.
+changed getting member&apos;s self introduction to consider profile.public_flag
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -38,13 +38,13 @@ fixed security issue of CSRF.
    <file baseinstalldir="/" md5sum="f707ede874b2b2bfc4dc469040d2eb6b" name="apps/pc_frontend/modules/favorite/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9d76d01a557a76ba7f31963d35a6edf2" name="apps/pc_frontend/modules/favorite/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/pc_frontend/modules/favorite/config/security.yml" role="data" />
-   <file baseinstalldir="/" md5sum="3049e94759df18efb6465da8c9b76a52" name="apps/pc_frontend/modules/favorite/templates/addSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="7d88b664c3b980d2e2b30bd4a6f8da9b" name="apps/pc_frontend/modules/favorite/templates/addSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="0379e98c2af99af16581eb819ea564b5" name="apps/pc_frontend/modules/favorite/templates/blogAlert.php" role="data" />
    <file baseinstalldir="/" md5sum="922dedd07820c082366794ec7265dd59" name="apps/pc_frontend/modules/favorite/templates/blogSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="517502488d12f37dab1d6116cb857423" name="apps/pc_frontend/modules/favorite/templates/diaryAlert.php" role="data" />
    <file baseinstalldir="/" md5sum="a58a62364f73e494a2c465300655a4ff" name="apps/pc_frontend/modules/favorite/templates/diarySuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="59696aebdc7945c9b13185d90c8d9ded" name="apps/pc_frontend/modules/favorite/templates/listError.php" role="data" />
-   <file baseinstalldir="/" md5sum="88e44d594b7117f2d6fba6ba614703fc" name="apps/pc_frontend/modules/favorite/templates/listSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="a18b94bcbf66885cb628fec719bf64b5" name="apps/pc_frontend/modules/favorite/templates/listSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="bf7cface14abcdc9bf2191c588dda2ea" name="apps/pc_frontend/modules/favorite/templates/_favoriteListBox.php" role="data" />
    <file baseinstalldir="/" md5sum="95b004162f91db6844a2f33ad003b2bf" name="apps/pc_frontend/modules/favorite/templates/_favoriteNews.php" role="data" />
    <file baseinstalldir="/" md5sum="175f2635f8a74aff45d199fb16369b3e" name="apps/pc_frontend/templates/_partsDiaryListBox.php" role="data" />
@@ -100,6 +100,21 @@ First release
    <license>apache</license>
    <notes>
 fixed security issue of CSRF.
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.8.0.2</release>
+    <api>0.8.0.2</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2011-04-09</date>
+   <license>apache</license>
+   <notes>
+changed getting member&apos;s self introduction to consider profile.public_flag
    </notes>
   </release>
  </changelog>
