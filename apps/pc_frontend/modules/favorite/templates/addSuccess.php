@@ -24,7 +24,7 @@
 
 <tr>
 <th><?php echo __('The last login') ?></th>
-<td><?php echo op_distance_of_time_in_words($member->getLastLoginTime(), time()) ?></td>
+<td><?php echo op_format_last_login_time($member->getLastLoginTime()) ?></td>
 </tr>
 
 </tbody></table>
