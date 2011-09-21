@@ -13,11 +13,17 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2011-04-09</date>
- <time>04:15:08</time>
+ <lead>
+  <name>Yuya Watanabe</name>
+  <user>watanabe</user>
+  <email />
+  <active>yes</active>
+ </lead>
+ <date>2011-09-21</date>
+ <time>21:42:25</time>
  <version>
-  <release>1.0.0.4</release>
-  <api>1.0.0.4</api>
+  <release>1.0.1</release>
+  <api>1.0.1</api>
  </version>
  <stability>
   <release>beta</release>
@@ -25,14 +31,17 @@
  </stability>
  <license>apache</license>
  <notes>
-changed getting member&apos;s self introduction to consider profile.public_flag
  </notes>
+Bug（バグ） #1800: mobileで未ログインの状態でお気に入り一覧にアクセスした場合のエラーが不適切
+Bug（バグ） #2137: 未ログインメンバーの最終ログインが「41年以上前」などと表示されている
+Enhancement（機能追加・改善） #1746: XSS 脆弱性、 CSRF 脆弱性のテストを完備できるように体制を整える
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="3c4f43690774ad7861511e69478c7559" name="apps/mobile_frontend/config/routing.yml" role="data" />
    <file baseinstalldir="/" md5sum="52535e4b2e16dc7a29cecfb32706e13c" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="0d4bff5d5a37167c115b6514b8b5d515" name="apps/mobile_frontend/modules/favorite/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="fb5117bd84ccab5f195f3ff458b5f65c" name="apps/mobile_frontend/modules/favorite/actions/components.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/mobile_frontend/modules/favorite/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="ecd9340ec0cf87dfa757b521072bc9e5" name="apps/mobile_frontend/modules/favorite/templates/diaryError.php" role="data" />
    <file baseinstalldir="/" md5sum="0861c87e0f8455ccaf2f8cff5eadfae7" name="apps/mobile_frontend/modules/favorite/templates/diarySuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="303ef3fffadc57ed83a69a115f655023" name="apps/mobile_frontend/modules/favorite/templates/listError.php" role="data" />
@@ -45,13 +54,13 @@ changed getting member&apos;s self introduction to consider profile.public_flag
    <file baseinstalldir="/" md5sum="4e2e8979e839bea3991d7fa5e578ec61" name="apps/pc_frontend/modules/favorite/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/pc_frontend/modules/favorite/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="039ea1fccb560f806527952fb077fbc5" name="apps/pc_frontend/modules/favorite/templates/addAlert.php" role="data" />
-   <file baseinstalldir="/" md5sum="9f2eeafffa381a54e5ce890b182a6734" name="apps/pc_frontend/modules/favorite/templates/addSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="24024ddb1765fe5d1496cc86d7c77b0b" name="apps/pc_frontend/modules/favorite/templates/addSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="0379e98c2af99af16581eb819ea564b5" name="apps/pc_frontend/modules/favorite/templates/blogAlert.php" role="data" />
    <file baseinstalldir="/" md5sum="e61dfcdba3a8203218d99d747df2f480" name="apps/pc_frontend/modules/favorite/templates/blogSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="517502488d12f37dab1d6116cb857423" name="apps/pc_frontend/modules/favorite/templates/diaryAlert.php" role="data" />
    <file baseinstalldir="/" md5sum="a6104290b08645d235c810ca0a3dc754" name="apps/pc_frontend/modules/favorite/templates/diarySuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="59696aebdc7945c9b13185d90c8d9ded" name="apps/pc_frontend/modules/favorite/templates/listError.php" role="data" />
-   <file baseinstalldir="/" md5sum="b8c209fb0e4175f4fab134f6d25a1572" name="apps/pc_frontend/modules/favorite/templates/listSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="99f82b32496f119dc74ebda3d44bc4fd" name="apps/pc_frontend/modules/favorite/templates/listSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="71e800a7116fb3f91b8cda8779ac164e" name="apps/pc_frontend/modules/favorite/templates/_favoriteBlogNews.php" role="data" />
    <file baseinstalldir="/" md5sum="c3a881f9060859775c5cb29801bb647c" name="apps/pc_frontend/modules/favorite/templates/_favoriteDiaryNews.php" role="data" />
    <file baseinstalldir="/" md5sum="fcbf6e87774115149548412da1af0907" name="apps/pc_frontend/modules/favorite/templates/_favoriteListBox.php" role="data" />
@@ -76,6 +85,16 @@ changed getting member&apos;s self introduction to consider profile.public_flag
    <file baseinstalldir="/" md5sum="5913ddc0f23dfbcb8fbc889ea395e6ff" name="lib/routing/opFavoriteBaseRouteCollection.class.php" role="data" />
    <file baseinstalldir="/" md5sum="82697aaf38d25956dad69d54ab1fc5b0" name="lib/routing/opFavoritePluginMobileFrontendRouteCollection.class.php" role="data" />
    <file baseinstalldir="/" md5sum="0ec6459bf6978861f6e28b07102383b6" name="lib/routing/opFavoritePluginPcFrontendRouteCollection.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="8a585d7165b066c62d5d1c69d7877362" name="test/bootstrap/database.php" role="data" />
+   <file baseinstalldir="/" md5sum="652a0d72910be1a5786698aaf5b9b508" name="test/bootstrap/functional.php" role="data" />
+   <file baseinstalldir="/" md5sum="b6e69bd4c5958def80bc622b1e8d15b2" name="test/bootstrap/unit.php" role="data" />
+   <file baseinstalldir="/" md5sum="f721af0dfa55a65beefe6d48ee050bc2" name="test/fixtures/001_import_member.yml" role="data" />
+   <file baseinstalldir="/" md5sum="94f14f76648b9161486a7735464b8d3a" name="test/fixtures/002_import_favorite.yml" role="data" />
+   <file baseinstalldir="/" md5sum="eb9d389b56456483fd8e1e2cdd3b02d9" name="test/fixtures/003_import_sns_config.yml" role="data" />
+   <file baseinstalldir="/" md5sum="5fb74ab1d08789a13e881c1c1c822ec7" name="test/fixtures/004_import_blog_rss_cache.yml" role="data" />
+   <file baseinstalldir="/" md5sum="8433bb1cff7543895b37085ca91c2795" name="test/fixtures/005_import_diary.yml" role="data" />
+   <file baseinstalldir="/" md5sum="652d29d791c24539d1fe9125f4b441e9" name="test/functional/mobile_frontend/favoriteActionsTest.php" role="data" />
+   <file baseinstalldir="/" md5sum="d9f37da0fad6db4607ab19ee5f7ecd87" name="test/functional/pc_frontend/favoriteActionsTest.php" role="data" />
   </dir>
  </contents>
  <dependencies>
@@ -178,6 +197,23 @@ fixed security issue of CSRF.
    <license>apache</license>
    <notes>
 changed getting member&apos;s self introduction to consider profile.public_flag
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.1</release>
+    <api>1.0.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2011-09-21</date>
+   <license>apache</license>
+   <notes>
+Bug（バグ） #1800: mobileで未ログインの状態でお気に入り一覧にアクセスした場合のエラーが不適切
+Bug（バグ） #2137: 未ログインメンバーの最終ログインが「41年以上前」などと表示されている
+Enhancement（機能追加・改善） #1746: XSS 脆弱性、 CSRF 脆弱性のテストを完備できるように体制を整える
    </notes>
   </release>
  </changelog>
