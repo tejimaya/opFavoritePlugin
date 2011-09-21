@@ -31,10 +31,10 @@
  </stability>
  <license>apache</license>
  <notes>
- </notes>
 Bug（バグ） #1800: mobileで未ログインの状態でお気に入り一覧にアクセスした場合のエラーが不適切
 Bug（バグ） #2137: 未ログインメンバーの最終ログインが「41年以上前」などと表示されている
 Enhancement（機能追加・改善） #1746: XSS 脆弱性、 CSRF 脆弱性のテストを完備できるように体制を整える
+ </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="3c4f43690774ad7861511e69478c7559" name="apps/mobile_frontend/config/routing.yml" role="data" />
