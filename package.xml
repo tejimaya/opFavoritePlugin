@@ -19,11 +19,11 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2011-09-21</date>
- <time>21:42:25</time>
+ <date>2016-11-09</date>
+ <time>17:58:07</time>
  <version>
-  <release>1.0.1</release>
-  <api>1.0.1</api>
+  <release>1.0.1.1</release>
+  <api>1.0.1.1</api>
  </version>
  <stability>
   <release>beta</release>
@@ -31,18 +31,16 @@
  </stability>
  <license>apache</license>
  <notes>
-Bug（バグ） #1800: mobileで未ログインの状態でお気に入り一覧にアクセスした場合のエラーが不適切
-Bug（バグ） #2137: 未ログインメンバーの最終ログインが「41年以上前」などと表示されている
-Enhancement（機能追加・改善） #1746: XSS 脆弱性、 CSRF 脆弱性のテストを完備できるように体制を整える
+version 1.0.1.1 for OPSA-2016-002
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="3c4f43690774ad7861511e69478c7559" name="apps/mobile_frontend/config/routing.yml" role="data" />
    <file baseinstalldir="/" md5sum="52535e4b2e16dc7a29cecfb32706e13c" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
-   <file baseinstalldir="/" md5sum="0d4bff5d5a37167c115b6514b8b5d515" name="apps/mobile_frontend/modules/favorite/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="751258eb5b65134a72081cadc1a363d9" name="apps/mobile_frontend/modules/favorite/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="fb5117bd84ccab5f195f3ff458b5f65c" name="apps/mobile_frontend/modules/favorite/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/mobile_frontend/modules/favorite/config/security.yml" role="data" />
-   <file baseinstalldir="/" md5sum="ecd9340ec0cf87dfa757b521072bc9e5" name="apps/mobile_frontend/modules/favorite/templates/diaryError.php" role="data" />
+   <file baseinstalldir="/" md5sum="ecd9340ec0cf87dfa757b521072bc9e5" name="apps/mobile_frontend/modules/favorite/templates/diaryAlert.php" role="data" />
    <file baseinstalldir="/" md5sum="0861c87e0f8455ccaf2f8cff5eadfae7" name="apps/mobile_frontend/modules/favorite/templates/diarySuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="303ef3fffadc57ed83a69a115f655023" name="apps/mobile_frontend/modules/favorite/templates/listError.php" role="data" />
    <file baseinstalldir="/" md5sum="d540c996fe5f8aff4ae58b222feb6cab" name="apps/mobile_frontend/modules/favorite/templates/listSuccess.php" role="data" />
@@ -50,7 +48,7 @@ Enhancement（機能追加・改善） #1746: XSS 脆弱性、 CSRF 脆弱性の
    <file baseinstalldir="/" md5sum="339a25082215f93702d3271b3918ca4a" name="apps/mobile_frontend/modules/favorite/templates/_favoriteDiaryNews.php" role="data" />
    <file baseinstalldir="/" md5sum="086d3f8f8de79dcf1420b503d7d9bf8b" name="apps/mobile_frontend/modules/member/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="4af3ef1b255474150f1edd04f53d0b71" name="apps/pc_frontend/config/routing.yml" role="data" />
-   <file baseinstalldir="/" md5sum="d1e47f198f87618c05b08d82e0a420ae" name="apps/pc_frontend/modules/favorite/actions/actions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="54cd31484677e3e135b887beef8cad17" name="apps/pc_frontend/modules/favorite/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="4e2e8979e839bea3991d7fa5e578ec61" name="apps/pc_frontend/modules/favorite/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/pc_frontend/modules/favorite/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="039ea1fccb560f806527952fb077fbc5" name="apps/pc_frontend/modules/favorite/templates/addAlert.php" role="data" />
@@ -76,12 +74,12 @@ Enhancement（機能追加・改善） #1746: XSS 脆弱性、 CSRF 脆弱性の
    <file baseinstalldir="/" md5sum="00450e9ee4f5c9cb600ce13e29fc8552" name="data/migrations/1.0.0/003_insert_mobile_gadget.php" role="data" />
    <file baseinstalldir="/" md5sum="f39918212121ef18371be8d2d22dbc76" name="data/migrations/1.0.0.2/004_add_foreign_key_for_favorite.php" role="data" />
    <file baseinstalldir="/" md5sum="8f0d1190de51deb393520c8766445d55" name="i18n/messages.ja.xml" role="data" />
-   <file baseinstalldir="/" md5sum="7c01476342fb3ec2f94964fd2ec11fb1" name="lib/action/opFavoritePluginFavoriteActions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="2c9995cd5d6e4f357776f92ffa833be2" name="lib/action/opFavoritePluginFavoriteActions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="853ab8f4937bf59337dada6d950b8456" name="lib/action/opFavoritePluginFavoriteComponents.class.php" role="data" />
    <file baseinstalldir="/" md5sum="ec08c93196652cdf1acb7e45c78a8cf7" name="lib/filter/doctrine/PluginFavoriteFormFilter.class.php" role="data" />
    <file baseinstalldir="/" md5sum="5873a033e00411563592db32a6057b96" name="lib/form/doctrine/PluginFavoriteForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="d9f47c3990403d6faddb868f32a3d7c5" name="lib/model/doctrine/PluginFavorite.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="81351f10377ddc3b8450470e525c5bc0" name="lib/model/doctrine/PluginFavoriteTable.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="78876e5169ffb9fb2102aa3f071cdeee" name="lib/model/doctrine/PluginFavoriteTable.class.php" role="data" />
    <file baseinstalldir="/" md5sum="5913ddc0f23dfbcb8fbc889ea395e6ff" name="lib/routing/opFavoriteBaseRouteCollection.class.php" role="data" />
    <file baseinstalldir="/" md5sum="82697aaf38d25956dad69d54ab1fc5b0" name="lib/routing/opFavoritePluginMobileFrontendRouteCollection.class.php" role="data" />
    <file baseinstalldir="/" md5sum="0ec6459bf6978861f6e28b07102383b6" name="lib/routing/opFavoritePluginPcFrontendRouteCollection.class.php" role="data" />
@@ -214,6 +212,21 @@ changed getting member&apos;s self introduction to consider profile.public_flag
 Bug（バグ） #1800: mobileで未ログインの状態でお気に入り一覧にアクセスした場合のエラーが不適切
 Bug（バグ） #2137: 未ログインメンバーの最終ログインが「41年以上前」などと表示されている
 Enhancement（機能追加・改善） #1746: XSS 脆弱性、 CSRF 脆弱性のテストを完備できるように体制を整える
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.1.1</release>
+    <api>1.0.1.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2016-11-09</date>
+   <license>apache</license>
+   <notes>
+version 1.0.1.1 for OPSA-2016-002
    </notes>
   </release>
  </changelog>
